@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("../font/Apercu Mono.otf");
+}
+@font-face {
+  font-family: "Apercu Light";
+  src: url("../font/Apercu Light.otf");
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Apercu Light", sans-serif;
+  line-height: 2;
+  font-size: 1.2em;
+  text-align: justify;
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+h1 {
+  font-family: "Apercu Mono", sans-serif;
+  text-transform: uppercase;
+  font-size: 3em;
+
+}
+header {
+  height: 100vh;
+  background-image: url("../img/SNIC_Glitch19_1920-1080px.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  z-index: 1000;
+}
+
+.event-logo {
+  width: auto;
+  height: auto;
+  padding-top: 30vh;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.event-logo img {
+  display:inline-block;
+  width: 75vw;
+  max-width: 1000px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.partner-wrapper {
+  width: 100vw;
+  height: 10vh;
+  max-height: 400px;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  text-align: justify;
+  overflow: hidden;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.partner-wrapper img {
+  margin: 2.5vh 2.5vw;
+  height: 5vh;
+  max-width: 80vw;
+  display: inline-block;
+  *display: inline;
+  object-fit: contain;
+}
+
+.stretch {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0
+}
+
+header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: black;
+}
+
+section {
+  min-height: 100vh;
+  color: black;
+  padding: 5vh 25vw;
+  z-index: -10;
+  position: relative;
+}
+
+.section-dark {
+  background-color: #2D2E83;
+  color: white;
+}
+
+
+
+.bar {
+  position: fixed;
+  z-index: -1;
+}
+
+.white {
+  background: white;
+}
+
+.brown {
+  background: #D5A361;
+}
+
+.blue {
+  background: #2D2E83;
+}
+
+
+.bar-1 {
+  width: 10px;
+  height: 200px;
+  top: 500px;
+  left: 50px;
+}
+
+.bar-2 {
+  width: 10px;
+  height: 600px;
+  top: 600px;
+  left: 120px;
+}
+
+.bar-3 {
+  width: 10px;
+  height: 100px;
+  top: 200px;
+  left: 200px;
+}
