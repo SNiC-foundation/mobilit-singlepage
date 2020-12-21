@@ -25,97 +25,94 @@ body {
   -ms-hyphens: auto;
 }
 
+/* Header font styles */
+
 h1 {
   font-family: "Apercu Mono", sans-serif;
   text-transform: uppercase;
   font-size: 3em;
-
 }
+
+h2 {
+  font-family: "Apercu Mono", sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5em;
+}
+
+/* Header background */
+
 header {
-  height: 100vh;
   background-image: url("../img/SNIC_Glitch19_1920-1080px.jpg");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-  z-index: 1000;
 }
 
-.event-logo {
-  width: auto;
-  height: auto;
-  padding-top: 30vh;
-  text-align:center;
+/* Header section */
+
+.section-header {
   display: flex;
+  flex-direction: column;
+}
+
+.event-logo-wrapper {
+  width: auto;
+  display: flex;
+  justify-content: center;
   align-items: center;
   margin: auto;
+  flex-grow: 1;
 }
 
-.event-logo img {
-  display:inline-block;
-  width: 75vw;
-  max-width: 1000px;
-  margin: auto;
-  vertical-align: middle;
+.event-logo-wrapper img {
+  width: 75%;
 }
 
 .partner-wrapper {
-  width: 100vw;
-  height: 10vh;
-  max-height: 400px;
+  flex-grow: 0;
+  width: 100%;
   background: white;
-  position: absolute;
-  bottom: 0;
-  text-align: justify;
-  overflow: hidden;
-  -ms-text-justify: distribute-all-lines;
-  text-justify: distribute-all-lines;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .partner-wrapper img {
-  margin: 2.5vh 2.5vw;
   height: 5vh;
-  max-width: 80vw;
-  display: inline-block;
-  *display: inline;
-  object-fit: contain;
 }
 
-.stretch {
-  width: 100%;
-  display: inline-block;
-  font-size: 0;
-  line-height: 0
+@media (max-width: 776px) {
+  .partner-wrapper img {
+    width: 50%;
+  }
 }
 
-header h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  color: black;
-}
+/* Text sections */
 
 section {
-  min-height: 100vh;
   color: black;
-  padding: 5vh 25vw;
-  z-index: -10;
   position: relative;
+  padding: 20px;
 }
 
-.section-dark {
+section.section-dark {
   background-color: #2D2E83;
   color: white;
 }
 
+.text-centered {
+  max-width: 800px;
+  padding: 20px;
+  z-index: 2;
+}
 
+/* Bars */
 
 .bar {
   position: fixed;
-  z-index: -1;
+  z-index: 1;
 }
 
 .white {
