@@ -95,6 +95,7 @@ section {
   color: black;
   position: relative;
   padding: 20px;
+  overflow: hidden;
 }
 
 section.section-dark {
@@ -111,7 +112,7 @@ section.section-dark {
 /* Bars */
 
 .bar {
-  position: fixed;
+  position: absolute;
   z-index: 1;
 }
 
