@@ -128,24 +128,3 @@ section.section-dark {
   background: #2D2E83;
 }
 
-
-.bar-1 {
-  width: 10px;
-  height: 200px;
-  top: 500px;
-  left: 50px;
-}
-
-.bar-2 {
-  width: 10px;
-  height: 600px;
-  top: 600px;
-  left: 120px;
-}
-
-.bar-3 {
-  width: 10px;
-  height: 100px;
-  top: 200px;
-  left: 200px;
-}
