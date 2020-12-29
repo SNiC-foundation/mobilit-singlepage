@@ -23,6 +23,13 @@ body {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  scroll-snap-type: y proximity;
+}
+
+@media (max-width: 767px) {
+  body {
+    scroll-snap-type: none;
+  }
 }
 
 /* Header font styles */
@@ -96,6 +103,7 @@ section {
   position: relative;
   padding: 20px;
   overflow: hidden;
+  scroll-snap-align: start;
 }
 
 section.section-dark {
@@ -112,8 +120,9 @@ section.section-dark {
 /* Bars */
 
 .bar {
-  position: absolute;
+  position: relative;
   z-index: 1;
+  width: 10px;
 }
 
 .white {
@@ -128,3 +137,19 @@ section.section-dark {
   background: #2D2E83;
 }
 
+/* Text bar containers */
+section.text-bar-container {
+  width: 100%;
+  display: flex;
+}
+
+section.text-bar-container .bar-container {
+  flex-grow: 1;
+  justify-content: space-evenly;
+}
+
+section.text-bar-container .text-container {
+  width: 100%;
+  max-width: 800px;
+  flex-grow: 0;
+}
