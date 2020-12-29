@@ -67,12 +67,14 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
   flex-grow: 1;
 }
 
-.event-logo-wrapper img {
-  width: 75%;
+.logo-svg-wrapper {
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: 800px;
 }
 
 .partner-wrapper {
@@ -92,7 +94,8 @@ header {
 
 @media (max-width: 776px) {
   .partner-wrapper img {
-    width: 50%;
+    width: calc(50% - 10px);
+    margin: 5px;
   }
 }
 
