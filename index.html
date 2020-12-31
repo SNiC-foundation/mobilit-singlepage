@@ -13,10 +13,9 @@
 
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d2e83">
   <link rel="shortcut icon" href="/favicon.ico">
@@ -27,9 +26,9 @@
   <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
-  <meta property="og:title" content="SNiC MobilIT 20/21">
+  <meta property="og:title" content="SNiC MobilIT">
   <meta property="og:type" content="event">
-  <meta property="event:start_time" content="2021-11-22T12:00:00.000Z">
+  <meta property="event:start_time" content="2021-11-23T10:00:00.000Z">
   <meta property="og:url" content="https://mobilit.snic.nl/">
   <meta property="og:image" content="/icon.png">
   <script type="application/ld+json">
@@ -37,12 +36,23 @@
       "@context": "https://schema.org",
       "@type": "Event",
       "name": "SNiC MobilIT",
+      "alternateName": "Nationaal Informatica Congres 2021 - MobilIT",
       "description": "Lorem ipsum dolor sit amet",
       "image": "https://mobilit.snic.nl/icon.png",
-      "startDate": "2021-11-23T10:00",
-      "endDate": "2021-11-23T19:00",
-      "eventStatus": "https://schema.org/EventPostponed",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "url": "https://mobilit.snic.nl",
+      "about": {
+        "@type": "Thing",
+        "name": "Mobility",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Stichting Nationaal Informatica Congres",
+        "url": "https://stichting.snic.nl"
+      },
+      "startDate": "2021-11-23",
+      "endDate": "2021-11-23",
+      "doorTime": "2021-11-23T10:00:00",
       "location": {
         "@type": "Place",
         "name": "Theater & Congres Orpheus",
@@ -54,16 +64,36 @@
           "addressCountry": "NL"
         }
       },
-      "performer": {
-        "@type": "Person",
-        "name": "Spreker 1"
+      "inLanguage": "English",
+      "eventStatus": "https://schema.org/EventPostponed",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "audience:": {
+        "audienceType": "computer science students",
+        "geographicArea": {
+          "@type": "AdministrativeArea",
+          "address": "The Netherlands"
+        }
       },
+      "potentialAction": "Participation",
+      "typicalAgeRange": "18-26",
+      "maximumAttendeeCapacity": "750",
+      "remainingAttendeeCapacity": "0",
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Spreker 1"
+        },
+        {
+          "@type": "Person",
+          "name": "Spreker 2"
+        }
+      ],
       "offers": [{
         "@type": "Offer",
         "name": "Thalia",
         "price": "10",
         "priceCurrency": "EUR",
-        "validFrom": "",
+        "validFrom": "2021-09-01",
         "url": "https://thalia.nu/event/xxx",
         "availability": "https://schema.org/InStock"
       },{
@@ -71,10 +101,45 @@
         "name": "CognAC",
         "price": "10",
         "priceCurrency": "EUR",
-        "validFrom": "",
+        "validFrom": "2021-09-01",
         "url": "https://thalia.nu/event/xxx",
         "availability": "https://schema.org/SoldOut"
-      }]
+      }],
+      "sponsor": [
+        {
+          "@type": "Organization",
+          "name": "ASML",
+          "url": "https://asml.nl"
+        },
+        {
+          "@type": "Organization",
+          "name": "Nedap",
+          "url": "https://nedap.nl"
+        }
+      ],
+      "eventSchedule": [
+        {
+          "@type": "Schedule",
+          "startDate": "2021-11-23",
+          "endDate": "2021-11-23",
+          "startTime": "10:00",
+          "endTime": "11:00",
+          "scheduleTimezone": "Europe/London",
+          "name": "Opening ceremony",
+          "description": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "@type": "Schedule",
+          "startDate": "2021-11-23",
+          "endDate": "2021-11-23",
+          "startTime": "11:00",
+          "endTime": "12:00",
+          "scheduleTimezone": "Europe/London",
+          "name": "Sessie 1",
+          "description": "Lorem ipsum dolor sit amet"
+        }
+
+      ]
     }
   </script>
 </head>
@@ -173,7 +238,7 @@
   <h1 style="display: none">SNIC 2020 - MobilIT</h1>
   <section class="text-bar-container min-vh-100 section-dark">
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
       <div class="bar white rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
       <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
@@ -193,14 +258,14 @@
       </div>
     </div>
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
-      <div class="bar white rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+      <div class="bar white rellax d-none d-lg-block" data-rellax-speed="0.5" data-rellax-percentage="0.5" style="height: 40px;"></div>
+      <div class="bar brown rellax" data-rellax-speed=".2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar white rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 600px;"></div>
     </div>
   </section>
   <section class="text-bar-container min-vh-100">
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
       <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
       <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
@@ -215,14 +280,14 @@
       </div>
     </div>
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
       <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
       <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
   </section>
   <section class="text-bar-container min-vh-100 section-dark">
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
       <div class="bar white rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
       <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
@@ -240,14 +305,14 @@
       </div>
     </div>
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
       <div class="bar white rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
       <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
   </section>
   <section class="text-bar-container min-vh-100">
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
       <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
       <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
@@ -260,7 +325,7 @@
       </div>
     </div>
     <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="margin-top: 450px; height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
       <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
       <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
