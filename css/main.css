@@ -1,3 +1,46 @@
+:root {
+  --screen-height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.white {
+  background: white;
+  color: black;
+}
+
+.brown {
+  background: #D5A361;
+  color: white;
+}
+
+.blue {
+  background: #2D2E83;
+  color: white;
+}
+
+/* Scroll snap */
+
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+/* Font styles */
+
 @font-face {
   font-family: "Apercu Mono";
   src: url("../font/Apercu Mono.otf");
@@ -5,13 +48,6 @@
 @font-face {
   font-family: "Apercu Light";
   src: url("../font/Apercu Light.otf");
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -23,104 +59,155 @@ body {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
-  scroll-snap-type: y proximity;
 }
 
-@media (max-width: 767px) {
-  body {
-    scroll-snap-type: none;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Apercu Mono", monospace;
+  text-transform: uppercase;
 }
-
-/* Header font styles */
 
 h1 {
-  font-family: "Apercu Mono", sans-serif;
-  text-transform: uppercase;
   font-size: 3em;
 }
 
 h2 {
-  font-family: "Apercu Mono", sans-serif;
-  text-transform: uppercase;
   font-size: 2.5em;
 }
 
-/* Header background */
+
+/* Page layout */
 
 header {
-  background-image: url("../img/SNIC_Glitch19_1920-1080px.jpg");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-image: url("../img/glitch.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  width: 100vw;
+  height: var(--screen-height); /* We need to use this little hack to use the correct height with mobile viewports */
+  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
+  grid-template-rows: 10% 70% 10% minmax(10%, 200px);
+  grid-template-areas:
+          ". . ."
+          ". center ."
+          ". . ."
+          "partnerbanner partnerbanner partnerbanner";
+  place-items: center stretch;
 }
 
-/* Header section */
-
-.section-header {
-  display: flex;
-  flex-direction: column;
+.header-section {
+  grid-area: center;
 }
-
-.event-logo-wrapper {
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.logo-svg-wrapper {
-  width: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
-  max-width: 800px;
-}
-
-.partner-wrapper {
-  flex-grow: 0;
-  width: 100%;
-  background: white;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.partner-wrapper img {
-  height: 5vh;
-}
-
-@media (max-width: 776px) {
-  .partner-wrapper img {
-    width: calc(50% - 10px);
-    margin: 5px;
-  }
-}
-
-/* Text sections */
 
 section {
-  color: black;
   position: relative;
-  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
+  grid-template-rows: 25% minmax(50%, min-content) 25%;
+  grid-template-areas:
+          "left . right"
+          "left main right"
+          "left . right";
+  place-items: center stretch;
+}
+
+section.two-panel-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+section.two-panel-section .text-section  {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
+  grid-template-rows: 25% 50% 25%;
+  grid-template-areas:
+          "left . right"
+          "left main right"
+          "left . right";
+  place-items: center stretch;
+}
+
+.section-text {
+  grid-area: main;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+section > .right, section > .left {
+  flex-grow: 1;
+  width: 50%;
+  min-width: 400px;
   overflow: hidden;
-  scroll-snap-align: start;
 }
 
-section.section-dark {
-  background-color: #2D2E83;
-  color: white;
+section > .right img, section > .left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
 }
 
-.text-centered {
-  max-width: 800px;
-  padding: 20px;
-  z-index: 2;
+
+.section-text img {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
+/* Partner banner */
+
+.partner-banner {
+  grid-area: partnerbanner;
+  place-self: stretch stretch;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: space-around;
+}
+
+.partner-banner img {
+  display: inline-block;
+  position: relative;
+  flex: 1 1 auto;
+  padding: 10px;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.section-text img {
+  padding: 50px;
+}
+
 
 /* Bars */
+
+section .bar-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 800px;
+  flex-grow: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+section > .bar-container:first-of-type {
+  grid-area: left;
+}
+section > .bar-container:last-of-type {
+  grid-area: right;
+}
 
 .bar {
   position: relative;
@@ -128,31 +215,164 @@ section.section-dark {
   width: 10px;
 }
 
-.white {
-  background: white;
+/* Menu */
+
+#menuToggle
+{
+  display: block;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 1000;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-.brown {
-  background: #D5A361;
+#menuToggle a
+{
+  text-decoration: none;
+  color: #2D2E83;
+  transition: color 0.3s ease;
 }
 
-.blue {
-  background: #2D2E83;
+#menuToggle a:hover
+{
+  color: #D5A361;
 }
 
-/* Text bar containers */
-section.text-bar-container {
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  z-index: 1;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
+}
+
+#menuToggle:hover input:not(:checked) ~ span:nth-child(3) {
+  transform: translateX(5px);
+}
+#menuToggle:hover input:not(:checked) ~ span:nth-child(2) {
+  transform: translateX(-8px);
+}
+#menuToggle:hover input:not(:checked) ~ span:nth-child(4) {
+  transform: translateX(-3px);
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0 0;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  padding: 100px 50px 50px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0 0;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: translateX(0%);
+}
+
+
+
+/* Map */
+
+#map {
+  height: 400px;
   width: 100%;
+}
+
+
+
+/* Gallery */
+
+.gallery {
+  position: relative;
+  width: 100%;
+  bottom: 40px;
   display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+.gallery::-webkit-scrollbar {
+  display: none
+}
+.gallery li {
+  scroll-snap-align: center;
+  display: inline-block;
+}
+.gallery li img {
+  height: 100px;
+  padding: 20px;
+  transition: transform .5s;
+}
+.gallery li img:hover{
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
 }
 
-section.text-bar-container .bar-container {
-  flex-grow: 1;
-  justify-content: space-evenly;
-}
 
-section.text-bar-container .text-container {
-  width: 100%;
-  max-width: 800px;
-  flex-grow: 0;
-}

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>SNiC MobilIT</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -31,19 +31,24 @@
   <meta property="event:start_time" content="2021-11-23T10:00:00.000Z">
   <meta property="og:url" content="https://mobilit.snic.nl/">
   <meta property="og:image" content="/icon.png">
+  <script>
+    const screenHeight = () => {
+      document.documentElement.style.setProperty('--screen-height', `${window.innerHeight}px`)
+    };
+    window.addEventListener('resize', screenHeight);
+    screenHeight();
+  </script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Event",
       "name": "SNiC MobilIT",
       "alternateName": "Nationaal Informatica Congres 2021 - MobilIT",
-      "description": "Lorem ipsum dolor sit amet",
       "image": "https://mobilit.snic.nl/icon.png",
       "url": "https://mobilit.snic.nl",
       "about": {
         "@type": "Thing",
-        "name": "Mobility",
-        "description": "Lorem ipsum dolor sit amet"
+        "name": "Mobility"
       },
       "organizer": {
         "@type": "Organization",
@@ -77,79 +82,17 @@
       "potentialAction": "Participation",
       "typicalAgeRange": "18-26",
       "maximumAttendeeCapacity": "750",
-      "remainingAttendeeCapacity": "0",
-      "performer": [
-        {
-          "@type": "Person",
-          "name": "Spreker 1"
-        },
-        {
-          "@type": "Person",
-          "name": "Spreker 2"
-        }
-      ],
-      "offers": [{
-        "@type": "Offer",
-        "name": "Thalia",
-        "price": "10",
-        "priceCurrency": "EUR",
-        "validFrom": "2021-09-01",
-        "url": "https://thalia.nu/event/xxx",
-        "availability": "https://schema.org/InStock"
-      },{
-        "@type": "Offer",
-        "name": "CognAC",
-        "price": "10",
-        "priceCurrency": "EUR",
-        "validFrom": "2021-09-01",
-        "url": "https://thalia.nu/event/xxx",
-        "availability": "https://schema.org/SoldOut"
-      }],
-      "sponsor": [
-        {
-          "@type": "Organization",
-          "name": "ASML",
-          "url": "https://asml.nl"
-        },
-        {
-          "@type": "Organization",
-          "name": "Nedap",
-          "url": "https://nedap.nl"
-        }
-      ],
-      "eventSchedule": [
-        {
-          "@type": "Schedule",
-          "startDate": "2021-11-23",
-          "endDate": "2021-11-23",
-          "startTime": "10:00",
-          "endTime": "11:00",
-          "scheduleTimezone": "Europe/London",
-          "name": "Opening ceremony",
-          "description": "Lorem ipsum dolor sit amet"
-        },
-        {
-          "@type": "Schedule",
-          "startDate": "2021-11-23",
-          "endDate": "2021-11-23",
-          "startTime": "11:00",
-          "endTime": "12:00",
-          "scheduleTimezone": "Europe/London",
-          "name": "Sessie 1",
-          "description": "Lorem ipsum dolor sit amet"
-        }
-
-      ]
+      "remainingAttendeeCapacity": "0"
     }
   </script>
 </head>
 
 <body>
-  <header class="min-vh-100 section-header">
-    <div class="event-logo-wrapper">
-      <div class="logo-svg-wrapper">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 895.8 203.9" style="enable-background:new 0 0 895.8 203.9;" xml:space="preserve">
+  <header id="top">
+    <div class="header-section">
+      <div class="logo-wrapper">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+             viewBox="0 0 895.8 203.9" xml:space="preserve">
           <style type="text/css">
             .st0{fill:#FFFFFF;}
             .st1{fill:#D5A361;}
@@ -209,7 +152,7 @@
             <g id="Bar-1" class="rellax-horizontal" data-rellax-horizontal-speed="1" data-rellax-vertical-scroll-axis="x">
               <rect x="226.4" y="82.9" class="st1" width="128.6" height="9.4"/>
             </g>
-            <g id="Bar-2" class="rellax-horizontal" data-rellax-horizontal-speed="0.5" data-rellax-vertical-scroll-axis="x">
+            <g id="Bar-2" class="rellax-horizontal" data-rellax-horizontal-speed="-0.5" data-rellax-vertical-scroll-axis="x">
               <rect x="322.4" y="7.7" class="st1" width="128.6" height="9.4"/>
             </g>
             <g id="Bar-3" class="rellax-horizontal" data-rellax-horizontal-speed="-0.5" data-rellax-vertical-scroll-axis="x">
@@ -218,7 +161,7 @@
             <g id="Bar-4" class="rellax-horizontal" data-rellax-horizontal-speed="-1" data-rellax-vertical-scroll-axis="x">
               <rect x="631.6" y="173.5" class="st1" width="128.6" height="9.4"/>
             </g>
-            <g id="Bar-5" class="rellax-horizontal" data-rellax-horizontal-speed="-2" data-rellax-vertical-scroll-axis="x">
+            <g id="Bar-5" class="rellax-horizontal" data-rellax-horizontal-speed="2" data-rellax-vertical-scroll-axis="x">
               <rect x="687.3" y="82.9" class="st0" width="128.6" height="9.4"/>
             </g>
             <g id="Bar-6" class="rellax-horizontal" data-rellax-horizontal-speed="1.5" data-rellax-vertical-scroll-axis="x">
@@ -228,114 +171,329 @@
         </svg>
       </div>
     </div>
-    <div class="partner-wrapper">
-      <img alt="Mock logo" src="img/mock-logo.svg">
-      <img alt="Mock logo" src="img/mock-logo.svg">
-      <img alt="Mock logo" src="img/mock-logo.svg">
-      <img alt="Mock logo" src="img/mock-logo.svg">
+    <div class="partner-banner">
+      <img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg">
+      <img alt="Rijskuniversiteit Groningen - Bernoulli institute" src="img/partners/rug-bernouli.png">
+      <img alt="Universiteit Twente" src="img/partners/utwente.svg">
+      <img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg">
     </div>
   </header>
   <h1 style="display: none">SNIC 2020 - MobilIT</h1>
-  <section class="text-bar-container min-vh-100 section-dark">
-    <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar white rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#theme">Theme</a></li>
+        <li><a href="#corona">Corona</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-    <div class="text-container d-flex align-items-center justify-content-center">
-      <div class="text-centered">
-        <h2>Theme</h2>
-        <p>
-          The theme of this year's conference is ResilIT: the impact of IT in preservation and recuperation of our society.
-          During the past decennia humanity has made huge advancements and is slowly moving towards what researchers have
-          dubbed "Society 4.0". However, how do we keep this society intact and how can we recover from disruptive events?
-          With an increase in population size and complex IT systems, the state of our society is becoming increasingly
-          fragile. This has created the important but difficult task of maintaining the environment we have created. The
-          congress will investigate different areas of this problem including disaster management, cyber threat management
-          and Society 4.0 in general. With varying talks, the aim of ResilIT is to inspire visitors to rethink how fragile
-          their position in the world is and how IT can be used to improve the safety of our society.
-        </p>
-      </div>
+  </nav>
+  <section id="theme" class="blue">
+    <div class="bar-container">
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="-2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar white rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar brown rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
-    <div class="bar-container d-none d-md-flex">
+    <div class="section-text">
+      <h2>Theme</h2>
+      <p>
+        The focus of this edition of SNiC will be on the IT of mobility. For the past years there have been major leaps
+        forward in the use of computers and AI in vehicles - think self driving cars, the optimisation of fuel usage in
+        aeroplanes, or apps that perform diagnostics on the engine of your motorcycle. But MobilIT can be extended to
+        much more than that: we can analyse the organisation of public transportation, or take a closer look at the
+        latest innovations in bionics and cybernetics - tech that will open up a future of mobility for everyone.
+      </p>
+      <p>
+        During SNiC 2020/2021 we will approach the future of mobility from a wide variety of angles: security is
+        essential for high-tech transportation in an age of self driving cars and cyber-warfare; theoretical computing
+        science is the core discipline behind route optimisation algorithms; Artificial limbs are almost completely
+        computer driven; and of course Artificial Intelligence will play a starring role.
+      </p>
+    </div>
+    <div class="bar-container">
       <div class="bar white rellax d-none d-lg-block" data-rellax-speed="0.5" data-rellax-percentage="0.5" style="height: 40px;"></div>
-      <div class="bar brown rellax" data-rellax-speed=".2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar white rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="-.2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar white rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 600px;"></div>
     </div>
   </section>
-  <section class="text-bar-container min-vh-100">
-    <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+  <section id="corona" class="two-panel-section">
+    <div class="left">
+      <div class="bar-container">
+        <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+        <div class="bar white rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+        <div class="bar brown rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+      </div>
+      <img alt="Altioszaal" src="img/location/altioszaal.jpg">
     </div>
-    <div class="text-container d-flex align-items-center justify-content-center">
-      <div class="text-centered">
-        <h2>Location</h2>
+    <div class="right text-section">
+      <div class="section-text">
+        <h2>Corona</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros lorem, scelerisque eget aliquet vel, fermentum
-          at odio. Aliquam erat volutpat. Ut vestibulum ipsum nisi, at blandit ante interdum id. Vivamus suscipit, ipsum ac
-          euismod accumsan, turpis nunc egestas orci, in blandit augue dolor non ligula.
+          Our conference has sadly been plagued by the corona virus. Last year we had to cancel the 2020 edition,
+          because the corona measures simply did not allow a physical congress in any form.
+        </p>
+        <p>
+          <strong>This year we are more optimistic!</strong>
+        </p>
+        <p>
+          We believe that with the vaccines being deployed faster and faster a normal conference in
+          november 2021 will be entirely feasible. In the small chance that we cannot host 700 people, we will try to
+          bring as many people as possible to our venue. We will then organize an online alternative for the people
+          that are not able to join in Apeldoorn. This way we ensure that as many people can have a good conference,
+          and sponsors will still be able to reach the students.
         </p>
       </div>
     </div>
-    <div class="bar-container d-none d-md-flex">
+  </section>
+  <section id="speakers" class="blue">
+    <div class="bar-container">
+      <div class="bar white rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar white rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+    </div>
+    <div class="section-text">
+      <h2>Speakers</h2>
+      <p>
+        As always we are working on an amazing line-up of speakers to present at our conference. We are, however, still
+        actively looking for more people that would like to give a talk. Thus if you would be interested in presenting
+        an interesting subject that fits in our theme, do not hesitate to send us an email at
+        <a href="mailto:speakers@2020.snic.nl">speakers@2020.snic.nl</a>.
+        We would very much like to hear about more amazing areas in MobilIT.
+      </p>
+      <img alt="Sprekers" src="img/location/spreker.jpg">
+    </div>
+    <div class="bar-container">
       <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+      <div class="bar white rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar brown rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
   </section>
-  <section class="text-bar-container min-vh-100 section-dark">
-    <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar white rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+  <section id="partners" class="">
+    <div class="bar-container">
+      <div class="bar blue rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar blue rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
-    <div class="text-container d-flex align-items-center justify-content-center">
-      <div class="text-centered">
+    <div class="section-text">
         <h2>Partners</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eros lorem, scelerisque eget aliquet vel, fermentum
-          at odio. Aliquam erat volutpat. Ut vestibulum ipsum nisi, at blandit ante interdum id. Vivamus suscipit, ipsum ac
-          euismod accumsan, turpis nunc egestas orci, in blandit augue dolor non ligula.
+          Next to the talks, there is a company fair with about 12-15 companies. Some of these companies are linked to
+          the theme, but this is not necessarily the case. They are interested in getting to know you! You might be
+          looking for an internship or job, or you want to get to know more about the opportunities they offer.
+          During the breaks you are able to meet the different companies. Apart from the fair, there is the option to
+          speed date with the companies.
         </p>
         <p>
-          Include a some partner logo's here with a lightbox if you click them (or something like that)
+          We are still looking for partnerships! You can email us at
+          <a href="mailto:partners.2020@snic.nl">partners.2020@snic.nl</a>
+          for more information.
         </p>
-      </div>
     </div>
-    <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar white rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+    <div class="bar-container">
+      <div class="bar blue rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar blue rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
     </div>
   </section>
-  <section class="text-bar-container min-vh-100">
-    <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-    </div>
-    <div class="text-container d-flex align-items-center justify-content-center">
-      <div class="text-centered">
-        <h2>Contact</h2>
+  <section id="location" class="blue two-panel-section">
+    <div class="left text-section">
+      <div class="section-text">
+        <h2>Location</h2>
         <p>
-          Include some contact information here
+          This year we have the pleasure of hosting our event at Orpheus Apeldoorn. Orpheus has 3 beautiful halls
+          where our speakers will give their talks. Their massive foyer has enough room for all the interesting
+          stands our sponsors will facilitate. Furthermore, it is located in the middle of the Netherlands to make
+          sure no single study association has a long travel time.
         </p>
+        <div id="map"></div>
       </div>
     </div>
-    <div class="bar-container d-none d-md-flex">
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-      <div class="bar blue rellax" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      <div class="bar brown rellax d-none d-lg-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+    <div class="right">
+      <div class="bar-container">
+        <div class="bar white rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+        <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+        <div class="bar white rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+      </div>
+      <img alt="Rabobankzaal" src="img/location/rabobankzaal.jpg">
     </div>
   </section>
+  <section id="contact" class="">
+    <div class="bar-container">
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar blue rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar brown rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+    </div>
+    <div class="section-text">
+        <h2>About SNiC</h2>
+        <p>
+          SNiC, Stichting Nationaal informatica Congres (which can be translated as the Foundation National Informatics
+          Congress), was established in December 2004. 9 study associations from 7 cities in the Netherlands are
+          affiliated. The aim of the foundation is to stimulate interest in knowledge of information and communication
+          technology, and to promote contact between students and the business world.
+        </p>
+        <p>
+          Every year one of the associations of the foundation organizes a congress with an IT related subject. On
+          November 23rd in 2021, the congress will be organized by two study associations from the Radboud University in
+          Nijmegen. These associations are Thalia (the study association for Computer Science and Information Science
+          students) and CognAC (the study association for Artificial Intelligence students).
+        </p>
+        <p>
+          Visitors are enthusiastic Computer Science and Artificial Intelligence bachelor and master students from all
+          over the country. Over the past years the congress has grown considerably. Where in 2017 the congress was
+          visited by 450 students, we expect around 700 visitors in 2021.
+        </p>
+        <p>
+          Various talks will be held at the congress by speakers from both the business world and the academic world.
+          The students are challenged to dive into a specific topic from different perspectives. We want to inspire them
+          and invite them to think further than their current views.
+        </p>
+        <p>
+          In addition, it is the chance for students to speak with many companies during the breaks and the drinks at
+          the company fair, to connect with potential employers or to find a thesis or internship spot.
+        </p>
+        <br>
+        <h3>Contact</h3>
+        <p>
+          <a href="mailto:committee@snic.nl">committee@snic.nl</a><br>
+        </p>
+        <p>
+          Toernooiveld 212, M1.0.08<br>
+          6525 EC Nijmegen<br>
+          The Netherlands
+        </p>
+        <img alt="Truck splashes on off-road" src="img/truck-splashes-on-off-road.jpg">
+    </div>
+    <div class="bar-container">
+      <div class="bar brown rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
+      <div class="bar blue rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
+      <div class="bar brown rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
+    </div>
+  </section>
+
+
 
   <script src="js/rellax.min.js"></script>
   <script src="js/main.js"></script>
   <script>
-    let rellax_horizontal = Rellax('.rellax-horizontal', {horizontal: true});
-    let rellax = Rellax('.rellax');
+    let rellax_horizontal = Rellax('.rellax-horizontal', {horizontal: true, wrapper:'body'});
+    let rellax = Rellax('.rellax', {wrapper:'body'});
+  </script>
+  <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcv6ZxkZXOyMoZj9Lx6W5UDJtZZtki9g8&callback=initMap&libraries=&v=weekly"
+          defer
+  ></script>
+  <script>
+    function initMap() {
+      const location = { lat: 52.2198648, lng: 5.953317 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 16,
+        center: location,
+        zoomControl: false,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false,
+        styles: [
+          { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
+          {
+            elementType: "labels.text.stroke",
+            stylers: [{ color: "#242f3e" }],
+          },
+          {
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#746855" }],
+          },
+          {
+            featureType: "administrative.locality",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }],
+          },
+          {
+            featureType: "poi",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }],
+          },
+          {
+            featureType: "poi.park",
+            elementType: "geometry",
+            stylers: [{ color: "#263c3f" }],
+          },
+          {
+            featureType: "poi.park",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#6b9a76" }],
+          },
+          {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [{ color: "#38414e" }],
+          },
+          {
+            featureType: "road",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#212a37" }],
+          },
+          {
+            featureType: "road",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#9ca5b3" }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry",
+            stylers: [{ color: "#746855" }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#1f2835" }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#f3d19c" }],
+          },
+          {
+            featureType: "transit",
+            elementType: "geometry",
+            stylers: [{ color: "#2f3948" }],
+          },
+          {
+            featureType: "transit.station",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#d59563" }],
+          },
+          {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [{ color: "#17263c" }],
+          },
+          {
+            featureType: "water",
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#515c6d" }],
+          },
+          {
+            featureType: "water",
+            elementType: "labels.text.stroke",
+            stylers: [{ color: "#17263c" }],
+          },
+        ],
+      });
+      const marker = new google.maps.Marker({
+        position: location,
+        map: map,
+      });
+    }
   </script>
 </body>
 
