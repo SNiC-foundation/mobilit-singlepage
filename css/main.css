@@ -24,18 +24,14 @@
 }
 
 /* Scroll snap */
-
-html, body {
+main {
   height: 100vh;
-  overflow: hidden;
-}
-
-body {
-  scroll-snap-type: y proximity;
   overflow-y: scroll;
+  scroll-snap-type: y proximity;
+  -webkit-overflow-scrolling: touch;
 }
 
-section {
+header, section {
   scroll-snap-align: start;
 }
 
