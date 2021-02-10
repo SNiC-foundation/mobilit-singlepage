@@ -1,5 +1,4 @@
 :root {
-  --screen-height: 100%;
   --blue: #2D2E83;
   --brown: #D5A361;
 }
@@ -82,7 +81,7 @@ header {
   background-size: cover;
   display: grid;
   width: 100vw;
-  height: var(--screen-height); /* We need to use this little hack to use the correct height with mobile viewports */
+  height: 100vh;
   grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
   grid-template-rows: 10% 70% 10% minmax(10%, 200px);
   grid-template-areas:
