@@ -31,7 +31,7 @@ main {
   -webkit-overflow-scrolling: touch;
 }
 
-header, section {
+header, section, section > .right, section > .left {
   scroll-snap-align: start;
 }
 
