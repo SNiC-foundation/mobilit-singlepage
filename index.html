@@ -31,6 +31,7 @@
   <meta property="event:start_time" content="2021-11-23T10:00:00.000Z">
   <meta property="og:url" content="https://mobilit.snic.nl/">
   <meta property="og:image" content="/icon.png">
+
   <script>
     const screenHeight = () => {
       document.documentElement.style.setProperty('--screen-height', `${window.innerHeight}px`)
@@ -90,7 +91,7 @@
 <body>
   <main>
     <header id="top">
-      <div class="header-section">
+      <div class="splash">
         <div class="logo-wrapper">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                viewBox="0 0 895.8 203.9" xml:space="preserve">
@@ -172,7 +173,11 @@
           </svg>
         </div>
       </div>
-      <div class="partner-banner">
+      <div class="banner">
+        <img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg">
+        <img alt="Rijskuniversiteit Groningen - Bernoulli institute" src="img/partners/rug-bernouli.png">
+        <img alt="Universiteit Twente" src="img/partners/utwente.svg">
+        <img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg">
         <img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg">
         <img alt="Rijskuniversiteit Groningen - Bernoulli institute" src="img/partners/rug-bernouli.png">
         <img alt="Universiteit Twente" src="img/partners/utwente.svg">
@@ -203,7 +208,7 @@
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
         <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
       </div>
-      <div class="section-text">
+      <article>
         <h2>Theme</h2>
         <p>
           The focus of this edition of SNiC will be on the IT of mobility. For the past years there have been major leaps
@@ -218,24 +223,17 @@
           science is the core discipline behind route optimisation algorithms; Artificial limbs are almost completely
           computer driven; and of course Artificial Intelligence will play a starring role.
         </p>
-      </div>
+      </article>
       <div class="bar-container">
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="0.5" data-rellax-percentage="0.5" style="height: 40px;"></div>
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="-.2" data-rellax-percentage="0.5" style="height: 200px;"></div>
         <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 600px;"></div>
       </div>
     </section>
-    <section id="corona" class="two-panel-section">
-      <div class="left">
-        <div class="bar-container">
-          <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-          <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-          <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-        </div>
-        <img alt="Altioszaal" src="img/location/altioszaal.jpg">
-      </div>
-      <div class="right text-section">
-        <div class="section-text">
+    <section id="corona" class="multi-panel">
+      <img alt="Altioszaal" src="img/location/altioszaal.jpg">
+      <div class="panel">
+        <article>
           <h2>Corona</h2>
           <p>
             Our conference has sadly been plagued by the corona virus. Last year we had to cancel the 2020 edition,
@@ -251,7 +249,7 @@
             that are not able to join in Apeldoorn. This way we ensure that as many people can have a good conference,
             and sponsors will still be able to reach the students.
           </p>
-        </div>
+        </article>
       </div>
     </section>
     <section id="speakers">
@@ -260,7 +258,7 @@
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
         <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
       </div>
-      <div class="section-text">
+      <article>
         <h2>Speakers</h2>
         <p>
           As always we are working on an amazing line-up of speakers to present at our conference. We are, however, still
@@ -270,7 +268,7 @@
           We would very much like to hear about more amazing areas in MobilIT.
         </p>
         <img alt="Sprekers" src="img/location/spreker.jpg">
-      </div>
+      </article>
       <div class="bar-container">
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
@@ -283,7 +281,7 @@
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
         <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
       </div>
-      <div class="section-text">
+      <article>
           <h2>Partners</h2>
           <p>
             Next to the talks, there is a company fair with about 12-15 companies. Some of these companies are linked to
@@ -297,16 +295,16 @@
             <a href="mailto:partners.2020@snic.nl">partners.2020@snic.nl</a>
             for more information.
           </p>
-      </div>
+      </article>
       <div class="bar-container">
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
         <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
       </div>
     </section>
-    <section id="location" class="two-panel-section">
-      <div class="left text-section">
-        <div class="section-text">
+    <section id="location" class="multi-panel">
+      <div class="panel">
+        <article>
           <h2>Location</h2>
           <p>
             This year we have the pleasure of hosting our event at Orpheus Apeldoorn. Orpheus has 3 beautiful halls
@@ -315,16 +313,9 @@
             sure no single study association has a long travel time.
           </p>
           <div id="map"></div>
-        </div>
+        </article>
       </div>
-      <div class="right">
-        <div class="bar-container">
-          <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-          <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-          <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-        </div>
-        <img alt="Rabobankzaal" src="img/location/rabobankzaal.jpg">
-      </div>
+      <img alt="Rabobankzaal" src="img/location/rabobankzaal.jpg">
     </section>
     <section id="contact">
       <div class="bar-container">
@@ -332,7 +323,7 @@
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
         <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
       </div>
-      <div class="section-text">
+      <article>
           <h2>About SNiC</h2>
           <p>
             SNiC, Stichting Nationaal informatica Congres (which can be translated as the Foundation National Informatics
@@ -342,7 +333,7 @@
           </p>
           <p>
             Every year one of the associations of the foundation organizes a congress with an IT related subject. On
-            November 23rd in 2021, the congress will be organized by two study associations from the Radboud University in
+            <time datetime="2021-11-23">November 23rd in 2021</time>, the congress will be organized by two study associations from the Radboud University in
             Nijmegen. These associations are Thalia (the study association for Computer Science and Information Science
             students) and CognAC (the study association for Artificial Intelligence students).
           </p>
@@ -371,7 +362,7 @@
             The Netherlands
           </p>
           <img alt="Truck splashes on off-road" src="img/truck-splashes-on-off-road.jpg">
-      </div>
+      </article>
       <div class="bar-container">
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
         <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
@@ -379,7 +370,6 @@
       </div>
     </section>
   </main>
-
 
   <script src="js/rellax.min.js"></script>
   <script src="js/main.js"></script>

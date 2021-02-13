@@ -26,14 +26,23 @@
 }
 
 /* Scroll snap */
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 main {
   height: 100vh;
+  width: 100vw;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-snap-type: y proximity;
   -webkit-overflow-scrolling: touch;
 }
 
-header, section {
+header, section, .panel {
   scroll-snap-align: start;
 }
 
@@ -50,7 +59,7 @@ header, section {
 
 body {
   font-family: "Apercu Light", sans-serif;
-  line-height: 2;
+  line-height: 2em;
   font-size: 1.2em;
   text-align: justify;
   hyphens: auto;
@@ -82,35 +91,36 @@ header {
   background-size: cover;
   display: grid;
   width: 100vw;
-  height: var(--screen-height); /* We need to use this little hack to use the correct height with mobile viewports */
-  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
+  height: 100vh; /* We need to use this little hack to use the correct height with mobile viewports */
+  grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
   grid-template-rows: 10% 70% 10% minmax(10%, 200px);
   grid-template-areas:
           ". . ."
           ". center ."
           ". . ."
-          "partnerbanner partnerbanner partnerbanner";
+          "banner banner banner";
   place-items: center stretch;
 }
 
-.header-section {
+.splash {
   grid-area: center;
 }
 
-section {
+/* Partner banner */
+
+.banner {
+  grid-area: banner;
+  place-self: stretch stretch;
+  background: white;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100vw;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
-  grid-template-rows: 25% minmax(50%, min-content) 25%;
-  grid-template-areas:
-          "left . right"
-          "left main right"
-          "left . right";
-  place-items: center stretch;
+}
+
+.banner img {
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 section:nth-child(even) {
@@ -135,38 +145,27 @@ section:nth-child(odd) .bar:nth-child(even) {
   background: var(--brown);
 }
 
-section.two-panel-section {
-  display: flex;
-  flex-wrap: wrap;
+section {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+section.multi-panel {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
   align-items: stretch;
 }
 
-section.two-panel-section .text-section  {
-  display: grid;
-  min-height: 100vh;
-  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
-  grid-template-rows: 25% 50% 25%;
-  grid-template-areas:
-          "left . right"
-          "left main right"
-          "left . right";
-  place-items: center stretch;
+section > * {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
 }
-
-.section-text {
-  grid-area: main;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-section > .right, section > .left {
-  flex-grow: 1;
-  width: 50%;
-  min-width: 400px;
-  overflow: hidden;
-}
-
-section > .right img, section > .left img {
+section > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -174,37 +173,31 @@ section > .right img, section > .left img {
   overflow: hidden;
 }
 
+section:not(.multi-panel), section.multi-panel .panel  {
+  display: grid;
+  /* min-height: 100vh; /* If we want to have full screen pages everywhere */
+  grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
+  grid-template-rows: minmax(80px, 1fr) minmax(50%, min-content) minmax(80px, 1fr);
+  grid-template-areas:
+          "left . right"
+          "left main right"
+          "left . right";
+  place-items: center stretch;
+}
 
-.section-text img {
+article {
+  grid-area: main;
+}
+
+article img {
   position: relative;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
-/* Partner banner */
 
-.partner-banner {
-  grid-area: partnerbanner;
-  place-self: stretch stretch;
-  background: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  align-content: space-around;
-}
-
-.partner-banner img {
-  display: inline-block;
-  position: relative;
-  flex: 1 1 auto;
-  padding: 10px;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.section-text img {
-  padding: 50px;
+article img {
+  padding: 20px;
 }
 
 
@@ -214,12 +207,11 @@ section .bar-container {
   position: absolute;
   display: flex;
   justify-content: space-evenly;
-  max-width: 800px;
   flex-grow: 0;
   width: 100%;
   height: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 section > .bar-container:first-of-type {
