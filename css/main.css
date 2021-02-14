@@ -1,6 +1,7 @@
 :root {
   --blue: #2D2E83;
   --brown: #D5A361;
+  --screen-height: 100vh;
 }
 
 * {
@@ -25,14 +26,13 @@
 }
 
 /* Scroll snap */
-main {
-  height: 100vh;
-  overflow-y: scroll;
+html {
   scroll-snap-type: y proximity;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: visible;
 }
 
-header, section {
+
+header, section, .panel {
   scroll-snap-align: start;
 }
 
@@ -49,7 +49,7 @@ header, section {
 
 body {
   font-family: "Apercu Light", sans-serif;
-  line-height: 2;
+  line-height: 2em;
   font-size: 1.2em;
   text-align: justify;
   hyphens: auto;
@@ -75,42 +75,66 @@ h2 {
 /* Page layout */
 
 header {
+  background-color: var(--blue);
   background-image: url("../img/glitch.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
   width: 100vw;
-  height: 100vh;
-  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
-  grid-template-rows: 10% 70% 10% minmax(10%, 200px);
+  height: var(--screen-height); /* We need to use this little hack to use the correct height with mobile viewports */
+  grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
+  grid-template-rows: minmax(20px, 2fr) 2fr minmax(20px, 2fr) minmax(40px, 10%);
+  gap: 10px 0;
   grid-template-areas:
           ". . ."
           ". center ."
-          ". . ."
-          "partnerbanner partnerbanner partnerbanner";
+          ". subhead ."
+          "banner banner banner";
   place-items: center stretch;
 }
 
-.header-section {
+.splash {
   grid-area: center;
 }
 
-section {
+/* Partner banner */
+
+.banner {
+  grid-area: banner;
+  background: white;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100vw;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
-  grid-template-rows: 25% minmax(50%, min-content) 25%;
-  grid-template-areas:
-          "left . right"
-          "left main right"
-          "left . right";
-  place-items: center stretch;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
+
+.banner img {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  margin: 0;
+  padding: 1vh;
+  vertical-align: middle;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slick-track, .slick-list {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slick-slide {
+  height: 100%;
+  margin: 0;
+  padding: 1vh;
+}
+
+/* Section colors */
 
 section:nth-child(even) {
   background: var(--blue);
@@ -134,17 +158,41 @@ section:nth-child(odd) .bar:nth-child(even) {
   background: var(--brown);
 }
 
-section.two-panel-section {
-  display: flex;
-  flex-wrap: wrap;
+/* Section layout */
+
+section {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+section.multi-panel {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
   align-items: stretch;
 }
 
-section.two-panel-section .text-section  {
+section > * {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+}
+section > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+}
+
+section:not(.multi-panel), section.multi-panel .panel  {
   display: grid;
-  min-height: 100vh;
-  grid-template-columns: 1fr minmax(min(800px, 90%), 50%) 1fr;
-  grid-template-rows: 25% 50% 25%;
+  /* min-height: 100vh; /* If we want to have full screen pages everywhere */
+  grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
+  grid-template-rows: minmax(80px, 1fr) minmax(50%, min-content) minmax(80px, 1fr);
   grid-template-areas:
           "left . right"
           "left main right"
@@ -152,60 +200,16 @@ section.two-panel-section .text-section  {
   place-items: center stretch;
 }
 
-.section-text {
+article {
   grid-area: main;
-  padding-top: 100px;
-  padding-bottom: 100px;
 }
 
-section > .right, section > .left {
-  flex-grow: 1;
-  width: 50%;
-  min-width: 400px;
-  overflow: hidden;
-}
-
-section > .right img, section > .left img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-}
-
-
-.section-text img {
+article img {
   position: relative;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
-/* Partner banner */
-
-.partner-banner {
-  grid-area: partnerbanner;
-  place-self: stretch stretch;
-  background: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  align-content: space-around;
-}
-
-.partner-banner img {
-  display: inline-block;
-  position: relative;
-  flex: 1 1 auto;
-  padding: 10px;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.section-text img {
-  padding: 50px;
-}
-
 
 /* Bars */
 
@@ -213,12 +217,11 @@ section .bar-container {
   position: absolute;
   display: flex;
   justify-content: space-evenly;
-  max-width: 800px;
   flex-grow: 0;
   width: 100%;
   height: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 section > .bar-container:first-of-type {
@@ -236,8 +239,7 @@ section > .bar-container:last-of-type {
 
 /* Menu */
 
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: fixed;
   top: 25px;
@@ -247,20 +249,17 @@ section > .bar-container:last-of-type {
   user-select: none;
 }
 
-#menuToggle a
-{
+#menuToggle a {
   text-decoration: none;
   color: var(--blue);
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
-{
+#menuToggle a:hover {
   color: var(--brown);
 }
 
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
@@ -273,8 +272,7 @@ section > .bar-container:last-of-type {
   -webkit-touch-callout: none;
 }
 
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
@@ -298,36 +296,30 @@ section > .bar-container:last-of-type {
   transform: translateX(-3px);
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0 0;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0 100%;
 }
 
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menu
-{
+#menu {
   position: fixed;
   right: 0;
   top: 0;
@@ -343,14 +335,12 @@ section > .bar-container:last-of-type {
   overflow-y: scroll;
 }
 
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 22px;
 }
 
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul {
   transform: translateX(0%);
 }
 
@@ -364,36 +354,10 @@ section > .bar-container:last-of-type {
 }
 
 
-
-/* Gallery */
-
-.gallery {
-  position: relative;
-  width: 100%;
-  bottom: 40px;
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
+/* Subhead */
+.subhead {
+  text-align: center;
+  grid-area: subhead;
+  color: white;
+  font-size: 2rem;
 }
-.gallery::-webkit-scrollbar {
-  display: none
-}
-.gallery li {
-  scroll-snap-align: center;
-  display: inline-block;
-}
-.gallery li img {
-  height: 100px;
-  padding: 20px;
-  transition: transform .5s;
-}
-.gallery li img:hover{
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
-  transform: scale(1.2);
-}
-
-
