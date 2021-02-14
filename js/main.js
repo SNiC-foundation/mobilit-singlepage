@@ -1,3 +1,11 @@
+// Mobile viewport screen-height hack
+const screenHeight = () => {
+    document.documentElement.style.setProperty('--screen-height', `${window.innerHeight}px`)
+};
+window.addEventListener('resize', screenHeight);
+screenHeight();
+
+// Slider
 $(document).ready(function(){
     $('.banner').slick({
         autoplay: true,
@@ -6,9 +14,9 @@ $(document).ready(function(){
         dots: false,
         pauseOnHover: false,
         slidesToScroll: 1,
-        slidesToShow: 8,
+        slidesToShow: 6,
+        useTransform: false, // otherwise Safari will show glitches
         responsive: [
-            {breakpoint: 1200, settings: {slidesToShow: 6}},
             {breakpoint: 1000, settings: {slidesToShow: 5}},
             {breakpoint:  800, settings: {slidesToShow: 4}},
             {breakpoint:  600, settings: {slidesToShow: 3}},

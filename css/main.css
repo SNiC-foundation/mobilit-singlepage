@@ -85,13 +85,14 @@ h2 {
 /* Page layout */
 
 header {
+  background-color: white;
   background-image: url("../img/glitch.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
   width: 100vw;
-  height: 100vh; /* We need to use this little hack to use the correct height with mobile viewports */
+  height: var(--screen-height); /* We need to use this little hack to use the correct height with mobile viewports */
   grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
   grid-template-rows: 10% 70% 10% minmax(10%, 200px);
   grid-template-areas:
@@ -112,7 +113,8 @@ header {
   grid-area: banner;
   place-self: stretch stretch;
   background: white;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -120,6 +122,8 @@ header {
   display: inline-block;
   position: relative;
   width: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   max-height: 100%;
   object-fit: contain;
 }
@@ -127,7 +131,13 @@ header {
 .slick-track, .slick-list {
   position: relative;
   height: 100%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
+/* Section colors */
 
 section:nth-child(even) {
   background: var(--blue);
@@ -151,6 +161,8 @@ section:nth-child(odd) .bar:nth-child(even) {
   background: var(--brown);
 }
 
+/* Section layout */
+
 section {
   position: relative;
   overflow-x: hidden;
@@ -162,7 +174,7 @@ section {
 section.multi-panel {
   display: grid;
   position: relative;
-  grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
   align-items: stretch;
 }
 
@@ -201,11 +213,6 @@ article img {
   object-fit: cover;
   object-position: center;
 }
-
-article img {
-  padding: 20px;
-}
-
 
 /* Bars */
 
@@ -361,38 +368,4 @@ section > .bar-container:last-of-type {
   height: 400px;
   width: 100%;
 }
-
-
-
-/* Gallery */
-
-.gallery {
-  position: relative;
-  width: 100%;
-  bottom: 40px;
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  mask-image: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
-}
-.gallery::-webkit-scrollbar {
-  display: none
-}
-.gallery li {
-  scroll-snap-align: center;
-  display: inline-block;
-}
-.gallery li img {
-  height: 100px;
-  padding: 20px;
-  transition: transform .5s;
-}
-.gallery li img:hover{
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Safari 3-8 */
-  transform: scale(1.2);
-}
-
 
