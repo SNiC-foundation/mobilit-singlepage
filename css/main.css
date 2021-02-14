@@ -26,13 +26,9 @@
 }
 
 /* Scroll snap */
-html, body {
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-}
-body {
+html {
   scroll-snap-type: y proximity;
+  overflow-y: visible;
 }
 
 
