@@ -1,6 +1,7 @@
 :root {
   --blue: #2D2E83;
   --brown: #D5A361;
+  --screen-height: 100vh;
 }
 
 * {
@@ -28,18 +29,12 @@
 html, body {
   height: 100vh;
   width: 100vw;
-  overflow-y: scroll;
   overflow-x: hidden;
+}
+body {
+  scroll-snap-type: y proximity;
 }
 
-main {
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y proximity;
-  -webkit-overflow-scrolling: touch;
-}
 
 header, section, .panel {
   scroll-snap-align: start;
@@ -84,7 +79,7 @@ h2 {
 /* Page layout */
 
 header {
-  background-color: white;
+  background-color: var(--blue);
   background-image: url("../img/glitch.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -93,11 +88,12 @@ header {
   width: 100vw;
   height: var(--screen-height); /* We need to use this little hack to use the correct height with mobile viewports */
   grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
-  grid-template-rows: 10% 70% 10% minmax(10%, 200px);
+  grid-template-rows: minmax(20px, 2fr) 2fr minmax(20px, 2fr) minmax(40px, 10%);
+  gap: 10px 0;
   grid-template-areas:
           ". . ."
           ". center ."
-          ". . ."
+          ". subhead ."
           "banner banner banner";
   place-items: center stretch;
 }
@@ -110,20 +106,22 @@ header {
 
 .banner {
   grid-area: banner;
-  place-self: stretch stretch;
   background: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
   position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 .banner img {
   display: inline-block;
   position: relative;
   width: auto;
-  margin-left: 20px;
-  margin-right: 20px;
-  max-height: 100%;
+  margin: 0;
+  padding: 1vh;
+  vertical-align: middle;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -131,10 +129,14 @@ header {
   position: relative;
   height: 100%;
   overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
+.slick-slide {
+  height: 100%;
+  margin: 0;
+  padding: 1vh;
+}
 
 /* Section colors */
 
@@ -241,8 +243,7 @@ section > .bar-container:last-of-type {
 
 /* Menu */
 
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: fixed;
   top: 25px;
@@ -252,20 +253,17 @@ section > .bar-container:last-of-type {
   user-select: none;
 }
 
-#menuToggle a
-{
+#menuToggle a {
   text-decoration: none;
   color: var(--blue);
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
-{
+#menuToggle a:hover {
   color: var(--brown);
 }
 
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
@@ -278,8 +276,7 @@ section > .bar-container:last-of-type {
   -webkit-touch-callout: none;
 }
 
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
@@ -303,36 +300,30 @@ section > .bar-container:last-of-type {
   transform: translateX(-3px);
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0 0;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0 100%;
 }
 
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menu
-{
+#menu {
   position: fixed;
   right: 0;
   top: 0;
@@ -348,14 +339,12 @@ section > .bar-container:last-of-type {
   overflow-y: scroll;
 }
 
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 22px;
 }
 
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul {
   transform: translateX(0%);
 }
 
@@ -368,3 +357,11 @@ section > .bar-container:last-of-type {
   width: 100%;
 }
 
+
+/* Subhead */
+.subhead {
+  text-align: center;
+  grid-area: subhead;
+  color: white;
+  font-size: 2rem;
+}
