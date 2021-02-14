@@ -112,15 +112,21 @@ header {
   grid-area: banner;
   place-self: stretch stretch;
   background: white;
+  padding: 10px;
   position: relative;
 }
 
 .banner img {
   display: inline-block;
   position: relative;
-  padding: 20px;
+  width: auto;
   max-height: 100%;
   object-fit: contain;
+}
+
+.slick-track, .slick-list {
+  position: relative;
+  height: 100%;
 }
 
 section:nth-child(even) {
