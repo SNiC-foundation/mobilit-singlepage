@@ -1,11 +1,7 @@
 name: Notify Google of sitemap update
 
 on:
-  push:
-    branches:
-      - 'master'
-    paths:
-      - 'sitemap.xml'
+  page_build
 
 jobs:
   sitemap_job:
