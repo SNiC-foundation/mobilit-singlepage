@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '*.html'
+      - '*.png'
+      - '*.svg'
+      - 'img/'
 
 jobs:
   sitemap_job:
