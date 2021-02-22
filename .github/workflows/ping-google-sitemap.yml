@@ -1,0 +1,17 @@
+name: Notify Google of sitemap update
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'sitemap.xml'
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Ping Google
+    steps:
+      - name: Send HTTP GET request to Google as ping
+        run: wget http://www.google.com/ping?sitemap=https://mobilit.snic.nl/sitemap.xml
+
