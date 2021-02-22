@@ -2,8 +2,6 @@ name: Generate xml sitemap
 
 on:
   push:
-    branches:
-      - master
 
 jobs:
   sitemap_job:
