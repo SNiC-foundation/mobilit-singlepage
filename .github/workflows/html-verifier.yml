@@ -1,7 +1,9 @@
 name: Verify HTML
 
 on:
-  push:
+  pull_request:
+    paths:
+      - '*.html'
 
 jobs:
   build:
