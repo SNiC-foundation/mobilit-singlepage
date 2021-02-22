@@ -16,14 +16,14 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Generate the sitemap
         id: sitemap
         uses: cicirello/generate-sitemap@v1.6.1
         with:
           base-url-path: https://mobilit.snic.nl/
-      - name: Commit & Push sitemap
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          message: "Update sitemap.xml"
+      - uses: fregante/setup-git-user@v1
+      - name: Commit & push sitemap
+        run: |-
+          git commit -a -m "Update sitemap"
+          git push origin HEAD:${{ github.event.pull_request.head.ref }}
