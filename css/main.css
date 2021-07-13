@@ -1,363 +1,242 @@
 :root {
-  --blue: #2D2E83;
-  --brown: #D5A361;
-  --screen-height: 100vh;
+    --blue: #2D2E83;
+    --brown: #D5A361;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .white {
-  background: white;
-  color: black;
+    background: white;
+    color: black;
 }
-
 .brown {
-  background: var(--brown);
-  color: white;
+    background: var(--brown);
+    color: white;
 }
-
 .blue {
-  background: var(--blue);
-  color: white;
+    background: var(--blue);
+    color: white;
 }
-
-/* Scroll snap */
-html {
-  scroll-snap-type: y proximity;
-  overflow-y: visible;
-}
-
-
-header, section, .panel {
-  scroll-snap-align: start;
-}
-
-/* Font styles */
 
 @font-face {
-  font-family: "Apercu Mono";
-  src: url("../font/Apercu Mono.otf");
+    font-family: "Apercu Mono";
+    src: url("../font/Apercu Mono.otf");
 }
 @font-face {
-  font-family: "Apercu Light";
-  src: url("../font/Apercu Light.otf");
+    font-family: "Apercu Light";
+    src: url("../font/Apercu Light.otf");
 }
+body {
+    font-family: "Apercu Light", sans-serif;
+    text-align: justify;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Apercu Mono", monospace;
+    text-transform: uppercase;
+}
+
+a  {
+    color: var(--blue);
+}
+.blue a  {
+    color: var(--brown);
+}
+
+
 
 body {
-  font-family: "Apercu Light", sans-serif;
-  line-height: 2em;
-  font-size: 1.2em;
-  text-align: justify;
-  hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Apercu Mono", monospace;
-  text-transform: uppercase;
+main {
+    position: relative;
+    height: 100%;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
 }
-
-h1 {
-  font-size: 3em;
+.fullscreen {
+    min-height: 100vh;
+    width: 100vw;
 }
-
-h2 {
-  font-size: 2.5em;
+.snap {
+    scroll-snap-align: start;
 }
-
-
-/* Page layout */
+.snap-end {
+    scroll-snap-align: end;
+}
+footer {
+    position: relative;
+    height: 0;
+    min-height: 0;
+}
 
 header {
-  background-color: var(--blue);
-  background-image: url("../img/glitch.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: grid;
-  width: 100vw;
-  height: var(--screen-height); /* We need to use this little hack to use the correct height with mobile viewports */
-  grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
-  grid-template-rows: minmax(20px, 2fr) 2fr minmax(20px, 2fr) minmax(40px, 10%);
-  gap: 10px 0;
-  grid-template-areas:
-          ". . ."
-          ". center ."
-          ". subhead ."
-          "banner banner banner";
-  place-items: center stretch;
+    background-color: var(--blue);
+    background-image: url("../img/glitch.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
 }
 
-.splash {
-  grid-area: center;
+
+/* Menu toggle */
+
+#menuToggle {
+    cursor: pointer;
+    z-index: 1000;
 }
+
+#menuToggle span {
+    display: block;
+    width: 20px;
+    height: 3px;
+    margin-bottom: 4px;
+    background: #cccccc;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menuToggle:hover span {
+    background: #FFFFFF;
+    box-shadow: 0 0 2px #232323;
+}
+#menuToggle:hover span:nth-child(3) {
+    transform: translateX(3px);
+}
+#menuToggle:hover span:nth-child(2) {
+    transform: translateX(-8px);
+}
+#menuToggle:hover span:nth-child(1) {
+    transform: translateX(1px);
+}
+
+
+/* Blocks and backdrop */
+.backdrop::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    filter: blur(25px);
+    background-clip: content-box;
+    background-origin: content-box;
+}
+.blue .backdrop::before {
+    background-color: rgba(45, 46, 131, 0.8);
+}
+.white .backdrop::before {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.backdrop > article {
+    position: relative;
+}
+
+header {
+    z-index: 100;
+    position: relative;
+}
+section {
+    z-index: 80;
+}
+.banner {
+    z-index: 200;
+}
+.container {
+    z-index: 10;
+}
+.block {
+    z-index: 1;
+}
+
+
 
 /* Partner banner */
 
 .banner {
-  grid-area: banner;
-  background: white;
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  text-align: center;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 10%;
+    text-align: center;
 }
 
 .banner img {
-  display: inline-block;
-  position: relative;
-  width: auto;
-  margin: 0;
-  padding: 1vh;
-  vertical-align: middle;
-  height: 100%;
-  object-fit: contain;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    margin: 0;
+    padding: 10px;
+    vertical-align: middle;
+    height: 100%;
+    object-fit: contain;
 }
 
 .slick-track, .slick-list {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  margin: auto;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
 }
 
 .slick-slide {
-  height: 100%;
-  margin: 0;
-  padding: 1vh;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
 }
 
-/* Section colors */
+/* Navbar */
 
-section:nth-child(even) {
-  background: var(--blue);
-  color: white;
+.nav-pills .navbar-brand {
+    background-color: unset !important;
 }
-section:nth-child(even) .bar:nth-child(odd) {
-  background: var(--brown);
+.navbar-brand img {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
-section:nth-child(even) .bar:nth-child(even) {
-  background: white;
+.nav-pills .nav-link {
+    border-radius: 0;
 }
-
-section:nth-child(odd) {
-  background: white;
-  color: black;
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: var(--brown);
 }
-section:nth-child(odd) .bar:nth-child(odd) {
-  background: var(--blue);
+.nav-link, .nav-link a {
+    color: white !important;
 }
-section:nth-child(odd) .bar:nth-child(even) {
-  background: var(--brown);
+.nav-link:hover {
+    color: var(--brown);
 }
-
-/* Section layout */
-
-section {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  width: 100vw;
-  min-height: 100vh;
-}
-
-section.multi-panel {
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
-  align-items: stretch;
-}
-
-section > * {
-  position: relative;
-  width: 100%;
-  object-fit: cover;
-}
-section > div img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-}
-
-section:not(.multi-panel), section.multi-panel .panel  {
-  display: grid;
-  /* min-height: 100vh; /* If we want to have full screen pages everywhere */
-  grid-template-columns: minmax(20px, 1fr) minmax(50%, min(80%, 800px)) minmax(20px, 1fr);
-  grid-template-rows: minmax(80px, 1fr) minmax(50%, min-content) minmax(80px, 1fr);
-  grid-template-areas:
-          "left . right"
-          "left main right"
-          "left . right";
-  place-items: center stretch;
-}
-
-article {
-  grid-area: main;
-}
-
-article img {
-  position: relative;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Bars */
-
-section .bar-container {
-  position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-  flex-grow: 0;
-  width: 100%;
-  height: 100%;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-section > .bar-container:first-of-type {
-  grid-area: left;
-}
-section > .bar-container:last-of-type {
-  grid-area: right;
-}
-
-.bar {
-  position: relative;
-  z-index: 1;
-  width: 10px;
-}
-
-/* Menu */
-
-#menuToggle {
-  display: block;
-  position: fixed;
-  top: 25px;
-  right: 25px;
-  z-index: 1000;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle a {
-  text-decoration: none;
-  color: var(--blue);
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover {
-  color: var(--brown);
-}
-
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: fixed;
-  top: 25px;
-  right: 25px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-  -webkit-touch-callout: none;
-}
-
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: #cdcdcd;
-  z-index: 1;
-  transform-origin: 4px 0;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-  opacity 0.55s ease;
-}
-
-#menuToggle:hover input:not(:checked) ~ span:nth-child(3) {
-  transform: translateX(5px);
-}
-#menuToggle:hover input:not(:checked) ~ span:nth-child(2) {
-  transform: translateX(-8px);
-}
-#menuToggle:hover input:not(:checked) ~ span:nth-child(4) {
-  transform: translateX(-3px);
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0 0;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0 100%;
-}
-
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 300px;
-  padding: 100px 50px 50px;
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0 0;
-  transform: translateX(100%);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  max-height: 100vh;
-  overflow-y: scroll;
-}
-
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-#menuToggle input:checked ~ ul {
-  transform: translateX(0%);
+.offcanvas {
+    width: 300px;
 }
 
 
 
-/* Map */
+/* FORMS */
 
-#map {
-  height: 400px;
-  width: 100%;
+.form-control {
+    border-radius: 0;
+}
+.btn {
+    border-radius: 0;
+}
+.btn-primary {
+    background-color: var(--brown);
+    border-color: var(--brown);
+}
+.btn-primary:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
 }
 
 
-/* Subhead */
-.subhead {
-  text-align: center;
-  grid-area: subhead;
-  color: white;
-  font-size: 2rem;
+
+/* CARDS */
+
+.card {
+    border-radius: 0;
 }
