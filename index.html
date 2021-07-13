@@ -2,504 +2,405 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <title>SNiC MobilIT</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta charset="utf-8">
+    <title>SNiC MobilIT</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcv6ZxkZXOyMoZj9Lx6W5UDJtZZtki9g8&callback=initMap&libraries=&v=weekly" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/main.css">
 
-  <script src="js/jquery-3.5.1.min.js"></script>
-  <script src="js/rellax.min.js"></script>
-  <script src="js/slick.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.banner').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                slidesToScroll: 1,
+                slidesToShow: 6,
+                useTransform: false, // otherwise Safari will show glitches
+                responsive: [
+                    {breakpoint: 1000, settings: {slidesToShow: 5}},
+                    {breakpoint:  800, settings: {slidesToShow: 4}},
+                    {breakpoint:  600, settings: {slidesToShow: 3}},
+                    {breakpoint:  400, settings: {slidesToShow: 2}},
+                    {breakpoint:  200, settings: {slidesToShow: 1}},
+                ]
+            });
+        });
+    </script>
 
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/main.js"></script>
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.ico">
 
-  <link rel="apple-touch-icon" href="icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="alternate icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d2e83">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="SNiC MobilIT">
+    <meta name="application-name" content="SNiC MobilIT">
+    <meta name="msapplication-TileColor" content="#2d2e83">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d2e83">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <meta name="apple-mobile-web-app-title" content="SNiC MobilIT">
-  <meta name="application-name" content="SNiC MobilIT">
-  <meta name="msapplication-TileColor" content="#2d2e83">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="msapplication-config" content="/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="AszkffQb3SogEpWkr8y4XBEcdX0vlKyyvyls2nDoBII" />
 
-  <meta name="google-site-verification" content="AszkffQb3SogEpWkr8y4XBEcdX0vlKyyvyls2nDoBII" />
+    <meta property="og:title" content="SNiC MobilIT">
+    <meta property="og:type" content="event">
+    <meta property="event:start_time" content="2021-11-23T10:00:00.000Z">
+    <meta property="og:url" content="https://mobilit.snic.nl/">
+    <meta property="og:image" content="/icon.png">
 
-  <meta property="og:title" content="SNiC MobilIT">
-  <meta property="og:type" content="event">
-  <meta property="event:start_time" content="2021-11-23T10:00:00.000Z">
-  <meta property="og:url" content="https://mobilit.snic.nl/">
-  <meta property="og:image" content="/icon.png">
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "SNiC MobilIT 2020/2021",
-      "alternateName": "Nationaal Informatica Congres 2020/2021 - MobilIT",
-      "image": "https://mobilit.snic.nl/icon.png",
-      "url": "https://mobilit.snic.nl",
-      "about": {
-        "@type": "Thing",
-        "name": "Mobility"
-      },
-      "organizer": {
-        "@type": "Organization",
-        "name": "Stichting Nationaal Informatica Congres",
-        "url": "https://stichting.snic.nl"
-      },
-      "startDate": "2021-11-23",
-      "endDate": "2021-11-23",
-      "doorTime": "2021-11-23T10:00:00",
-      "location": {
-        "@type": "Place",
-        "name": "Theater & Congres Orpheus",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Churchillplein 1",
-          "addressLocality": "Apeldoorn",
-          "postalCode": "7314 BZ",
-          "addressCountry": "NL"
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "SNiC MobilIT 2020/2021",
+            "alternateName": "Nationaal Informatica Congres 2020/2021 - MobilIT",
+            "image": "https://mobilit.snic.nl/icon.png",
+            "url": "https://mobilit.snic.nl",
+            "about": {
+                "@type": "Thing",
+                "name": "Mobility"
+            },
+            "organizer": {
+                "@type": "Organization",
+                "name": "Stichting Nationaal Informatica Congres",
+                "url": "https://stichting.snic.nl"
+            },
+            "startDate": "2021-11-23",
+            "endDate": "2021-11-23",
+            "doorTime": "2021-11-23T10:00:00",
+            "location": {
+                "@type": "Place",
+                "name": "Theater & Congres Orpheus",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Churchillplein 1",
+                    "addressLocality": "Apeldoorn",
+                    "postalCode": "7314 BZ",
+                    "addressCountry": "NL"
+                }
+            },
+            "inLanguage": "English",
+            "eventStatus": "https://schema.org/EventPostponed",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "audience:": {
+                "audienceType": "computer science students",
+                "geographicArea": {
+                    "@type": "AdministrativeArea",
+                    "address": "The Netherlands"
+                }
+            },
+            "potentialAction": "Participation",
+            "typicalAgeRange": "18-26",
+            "maximumAttendeeCapacity": "750",
+            "remainingAttendeeCapacity": "750"
         }
-      },
-      "inLanguage": "English",
-      "eventStatus": "https://schema.org/EventPostponed",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "audience:": {
-        "audienceType": "computer science students",
-        "geographicArea": {
-          "@type": "AdministrativeArea",
-          "address": "The Netherlands"
-        }
-      },
-      "potentialAction": "Participation",
-      "typicalAgeRange": "18-26",
-      "maximumAttendeeCapacity": "750",
-      "remainingAttendeeCapacity": "750"
-    }
-  </script>
+    </script>
 </head>
 <body>
-    <header id="top">
-      <figure class="splash">
+<main data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" >
+    <div id="menuToggle" class="position-fixed top-0 end-0 m-3" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <header id="mobilit" class="fullscreen snap d-flex align-items-end justify-content-center" style="min-height: 90vh;">
+        <figure class="logo container px-5 m-0 position-absolute top-50 start-50 translate-middle">
         <svg version="1.1" id="MOBILITLOGO" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                   y="0px" viewBox="0 0 895.8 205.9" style="enable-background:new 0 0 895.8 205.9;" xml:space="preserve">
+             y="0px" viewBox="0 0 895.8 205.9" style="enable-background:new 0 0 895.8 205.9;" xml:space="preserve">
           <style type="text/css">
             .st0{fill:#FFFFFF;}
             .st1{fill:#D3A362;}
           </style>
-          <g id="MobilIT">
-            <polygon class="st0" points="252.8,75.2 198,75.2 191.8,85.4 185.6,75.2 130.8,75.2 130.8,100 252.8,100 	"/>
-            <polygon class="st0" points="168.6,47.3 130.8,47.3 130.8,72.1 183.7,72.1 	"/>
-            <polygon class="st0" points="252.8,47.3 215,47.3 199.9,72.1 252.8,72.1 	"/>
-            <path class="st0" d="M372.5,155.7h60.1c24.5,0,38.5-10.2,41.1-24.8H372.5V155.7z"/>
-            <path class="st0" d="M432.5,47.3h-60.1v24.8h101.2C471,57.5,457.1,47.3,432.5,47.3"/>
-            <path class="st0" d="M456.4,100c10.7-4.1,17.3-11.1,17.3-23.6v-0.3c0-0.3,0-0.6,0-0.8H262.9c-4.3,7.6-6.7,16.1-6.9,24.8H456.4z"/>
-            <rect x="476.8" y="47.3" class="st0" width="36.2" height="24.8"/>
-            <rect x="372.5" y="103.1" class="st0" width="140.6" height="24.8"/>
-            <rect x="476.8" y="130.9" class="st0" width="36.2" height="24.8"/>
-            <rect x="606.5" y="75.2" class="st1" width="36.2" height="24.8"/>
-            <rect x="606.5" y="103.1" class="st1" width="36.2" height="24.8"/>
-            <rect x="606.5" y="130.9" class="st1" width="36.2" height="24.8"/>
-            <rect x="606.5" y="47.3" class="st1" width="139.4" height="24.8"/>
-            <rect x="677.8" y="75.2" class="st1" width="36.2" height="24.8"/>
-            <rect x="677.8" y="103.1" class="st1" width="36.2" height="24.8"/>
-            <rect x="677.8" y="130.9" class="st1" width="36.2" height="24.8"/>
-            <rect x="516.2" y="47.3" class="st0" width="36.2" height="24.8"/>
-            <rect x="476.8" y="75.2" class="st0" width="75.6" height="24.8"/>
-            <rect x="516.2" y="103.1" class="st0" width="36.2" height="24.8"/>
-            <rect x="516.2" y="130.9" class="st0" width="87.2" height="24.8"/>
-            <path class="st0" d="M312.8,47.3c-20.5,0-38,9.8-48,24.8h95.9C350.8,57.1,333.4,47.3,312.8,47.3"/>
-            <path class="st0" d="M312.5,155.7c20.5,0,38-9.8,48-24.8h-95.9C274.5,145.9,291.9,155.7,312.5,155.7"/>
-            <path class="st0" d="M88.8,103.1v24.8h273.6c4.3-7.6,6.7-16.1,6.9-24.8H88.8z"/>
-            <rect x="193.4" y="130.9" class="st0" width="59.5" height="24.8"/>
-            <rect x="130.8" y="130.9" class="st0" width="59.5" height="24.8"/>
-          </g>
-          <g id="SUBTITLE">
-            <g id="SNIC">
-              <path class="st0" d="M144.4,185.7c-1-2.4-2.6-3.6-4.8-3.6c-2.6,0-4.3,1.4-4.3,3.7c-0.1,1,0.4,2,1.3,2.5c1.3,0.7,2.8,1.2,4.2,1.5
-                  c1.4,0.3,2.7,0.8,3.9,1.4c1.9,1,2.8,2.3,2.9,4.8c0,5-3.1,7.6-7.9,7.6c-4.6,0-8-2.5-8.9-7.1l2.8-1.1c0.9,3.5,3,5.3,6.1,5.3
-                  s4.9-1.5,4.9-4.3c0-0.8-0.3-1.6-0.9-2.2c-0.3-0.3-0.7-0.5-1.1-0.6c-1.1-0.5-2.2-0.8-3.4-1.1c-1.3-0.3-2.6-0.7-3.8-1.3
-                  c-1.9-1-2.9-2.5-3-5.3c-0.1-1.8,0.6-3.5,1.9-4.8c1.5-1.3,3.4-2,5.3-1.9c3.3-0.1,6.3,2,7.4,5.1L144.4,185.7z"/>
-              <path class="st0" d="M167.9,179.6h3v23.8h-3.3l-10-18.4v18.4h-3v-23.8h3.3l10,18.4L167.9,179.6z"/>
-              <path class="st0" d="M193.5,203.4H179v-2.6h5.7v-18.6H179v-2.6h14.5v2.6h-5.8v18.6h5.8L193.5,203.4z"/>
-              <path class="st0" d="M219.2,196.4c-1.1,4.4-4.1,7.2-8.5,7.2c-2.7,0.1-5.3-1.1-7.1-3.1c-1.8-2.1-2.8-5.1-2.8-9s0.9-7,2.8-9
-                  c1.8-2,4.4-3.2,7.1-3.1c4.4,0,7.4,2.9,8.5,7.2l-2.8,0.9c-1.1-3.5-2.8-5.2-5.7-5.2c-4.2,0-6.7,3-6.7,9.3s2.5,9.3,6.7,9.3
-                  c3,0,4.6-1.7,5.7-5.2L219.2,196.4z"/>
-            </g>
-            <g id="_x32_020_x2F_2021">
-              <path class="st1" d="M225.2,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
-                  c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.1-1.7,0.9-3.2,2.2-4.4c1.2-1.1,2.8-1.8,4.5-1.8c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2
-                  c0,1.8-0.7,3.5-1.8,4.9l-7.2,9h9.4v2.6L225.2,202.3z"/>
-              <path class="st1" d="M253.6,202.5c-2.4,0.1-4.7-1.1-6-3.1c-1.4-2.1-2.1-4.9-2.1-8.4s0.7-6.3,2.1-8.3c2.4-3.3,7-4.1,10.3-1.7
-                  c0.6,0.5,1.2,1,1.7,1.7c1.6,2.5,2.3,5.4,2.2,8.3c0.1,2.9-0.6,5.9-2.2,8.4C258.3,201.5,256,202.6,253.6,202.5z M249.4,197.2
-                  l6.6-14.2c-0.7-0.5-1.6-0.7-2.5-0.7c-3.4,0-5.4,3.4-5.4,8.9C248.2,193.2,248.6,195.3,249.4,197.2z M259,191.1
-                  c0.1-2.1-0.3-4.2-1.2-6.1l-6.6,14.2c0.7,0.5,1.6,0.7,2.5,0.7C257,200,259,196.6,259,191.1z"/>
-              <path class="st1" d="M269.9,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
-                  c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.3-3.4,3.2-6.1,6.6-6.1c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2c0,1.8-0.6,3.5-1.8,4.9
-                  l-7.2,9h9.4v2.6L269.9,202.3z"/>
-              <path class="st1" d="M298.3,202.5c-2.4,0.1-4.7-1.1-6-3.1c-1.5-2.5-2.3-5.4-2.1-8.4c0-3.5,0.7-6.3,2.1-8.3c1.3-2,3.6-3.2,6-3.1
-                  c2.4-0.1,4.7,1.1,6,3.1c1.6,2.5,2.3,5.4,2.2,8.3c0.1,2.9-0.6,5.9-2.2,8.4C303,201.5,300.7,202.6,298.3,202.5z M294.2,197.2
-                  l6.6-14.2c-0.7-0.5-1.6-0.7-2.5-0.7c-3.4,0-5.4,3.4-5.4,8.9C292.9,193.2,293.3,195.3,294.2,197.2z M303.7,191.1
-                  c0.1-2.1-0.3-4.2-1.2-6.1l-6.6,14.2c0.7,0.5,1.6,0.7,2.5,0.7C301.8,200,303.7,196.6,303.7,191.1L303.7,191.1z"/>
-              <path class="st1" d="M325.7,178.3h2.8l-13,25.6h-2.7L325.7,178.3z"/>
-              <path class="st1" d="M337,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
-                  c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.1-1.7,0.9-3.2,2.2-4.4c1.2-1.1,2.8-1.8,4.5-1.8c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2
-                  c0,1.8-0.7,3.5-1.8,4.9l-7.2,9h9.4v2.6L337,202.3z"/>
-              <path class="st1" d="M365.4,202.5c-2.4,0.1-4.7-1.1-6-3.1c-1.4-2.1-2.1-4.9-2.1-8.4s0.7-6.3,2.1-8.3c2.4-3.3,7-4.1,10.3-1.7
-                  c0.6,0.5,1.2,1,1.7,1.7c1.4,2,2.2,4.8,2.2,8.3c0.1,2.9-0.6,5.9-2.2,8.4C370.1,201.5,367.8,202.6,365.4,202.5z M361.2,197.2
-                  l6.6-14.2c-0.7-0.5-1.6-0.7-2.5-0.7c-3.4,0-5.4,3.4-5.4,8.9C360,193.2,360.4,195.3,361.2,197.2z M370.8,191.1
-                  c0.1-2.1-0.3-4.2-1.2-6.1l-6.6,14.2c0.7,0.5,1.6,0.7,2.5,0.7C368.8,200,370.8,196.6,370.8,191.1L370.8,191.1z"/>
-              <path class="st1" d="M381.7,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
-                  c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.1-1.7,0.9-3.2,2.2-4.4c1.2-1.1,2.8-1.8,4.5-1.8c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2
-                  c0,1.8-0.6,3.5-1.8,4.9l-7.2,9h9.4v2.6L381.7,202.3z"/>
-              <path class="st1" d="M411.4,179.9h1v19.9h5.8v2.4H404v-2.4h5.7V184l-5.6,3.3v-2.9L411.4,179.9z"/>
-            </g>
-          </g>
-          <g id="BLOCKS">
-            <rect x="516.2" class="st0" width="102.5" height="24.8"/>
-            <rect x="423.1" y="178.8" class="st0" width="106.2" height="24.5"/>
-            <rect x="768.2" y="130.9" class="st0" width="127.6" height="24.8"/>
-            <rect y="103.1" class="st0" width="24.8" height="24.8"/>
-          </g>
-          <g id="BARS">
-            <g id="Bar-1" class="rellax-horizontal" data-rellax-horizontal-speed="1" data-rellax-vertical-scroll-axis="x">
-              <rect x="226.4" y="82.9" class="st1" width="128.6" height="9.4"/>
-            </g>
-            <g id="Bar-2" class="rellax-horizontal" data-rellax-horizontal-speed="-0.5" data-rellax-vertical-scroll-axis="x">
-              <rect x="322.4" y="7.7" class="st1" width="128.6" height="9.4"/>
-            </g>
-            <g id="Bar-3" class="rellax-horizontal" data-rellax-horizontal-speed="-0.5" data-rellax-vertical-scroll-axis="x">
-              <rect x="459.2" y="110.8" class="st1" width="128.6" height="9.4"/>
-            </g>
-            <g id="Bar-4" class="rellax-horizontal" data-rellax-horizontal-speed="-1" data-rellax-vertical-scroll-axis="x">
-              <rect x="631.6" y="173.5" class="st1" width="128.6" height="9.4"/>
-            </g>
-            <g id="Bar-5" class="rellax-horizontal" data-rellax-horizontal-speed="2" data-rellax-vertical-scroll-axis="x">
-              <rect x="687.3" y="82.9" class="st0" width="128.6" height="9.4"/>
-            </g>
-            <g id="Bar-6" class="rellax-horizontal" data-rellax-horizontal-speed="1.5" data-rellax-vertical-scroll-axis="x">
-              <rect x="36.2" y="138.6" class="st1" width="128.6" height="9.4"/>
-            </g>
-          </g>
-        </svg>
-      </figure>
-      <h2 class="subhead">
-        <time datetime="2021-11-23">23 November</time>
-      </h2>
-      <div class="banner">
+            <g id="MobilIT">
+                <polygon class="st0" points="252.8,75.2 198,75.2 191.8,85.4 185.6,75.2 130.8,75.2 130.8,100 252.8,100 	"/>
+                        <polygon class="st0" points="168.6,47.3 130.8,47.3 130.8,72.1 183.7,72.1 	"/>
+                        <polygon class="st0" points="252.8,47.3 215,47.3 199.9,72.1 252.8,72.1 	"/>
+                        <path class="st0" d="M372.5,155.7h60.1c24.5,0,38.5-10.2,41.1-24.8H372.5V155.7z"/>
+                        <path class="st0" d="M432.5,47.3h-60.1v24.8h101.2C471,57.5,457.1,47.3,432.5,47.3"/>
+                        <path class="st0" d="M456.4,100c10.7-4.1,17.3-11.1,17.3-23.6v-0.3c0-0.3,0-0.6,0-0.8H262.9c-4.3,7.6-6.7,16.1-6.9,24.8H456.4z"/>
+                        <rect x="476.8" y="47.3" class="st0" width="36.2" height="24.8"/>
+                        <rect x="372.5" y="103.1" class="st0" width="140.6" height="24.8"/>
+                        <rect x="476.8" y="130.9" class="st0" width="36.2" height="24.8"/>
+                        <rect x="606.5" y="75.2" class="st1" width="36.2" height="24.8"/>
+                        <rect x="606.5" y="103.1" class="st1" width="36.2" height="24.8"/>
+                        <rect x="606.5" y="130.9" class="st1" width="36.2" height="24.8"/>
+                        <rect x="606.5" y="47.3" class="st1" width="139.4" height="24.8"/>
+                        <rect x="677.8" y="75.2" class="st1" width="36.2" height="24.8"/>
+                        <rect x="677.8" y="103.1" class="st1" width="36.2" height="24.8"/>
+                        <rect x="677.8" y="130.9" class="st1" width="36.2" height="24.8"/>
+                        <rect x="516.2" y="47.3" class="st0" width="36.2" height="24.8"/>
+                        <rect x="476.8" y="75.2" class="st0" width="75.6" height="24.8"/>
+                        <rect x="516.2" y="103.1" class="st0" width="36.2" height="24.8"/>
+                        <rect x="516.2" y="130.9" class="st0" width="87.2" height="24.8"/>
+                        <path class="st0" d="M312.8,47.3c-20.5,0-38,9.8-48,24.8h95.9C350.8,57.1,333.4,47.3,312.8,47.3"/>
+                        <path class="st0" d="M312.5,155.7c20.5,0,38-9.8,48-24.8h-95.9C274.5,145.9,291.9,155.7,312.5,155.7"/>
+                        <path class="st0" d="M88.8,103.1v24.8h273.6c4.3-7.6,6.7-16.1,6.9-24.8H88.8z"/>
+                        <rect x="193.4" y="130.9" class="st0" width="59.5" height="24.8"/>
+                        <rect x="130.8" y="130.9" class="st0" width="59.5" height="24.8"/>
+              </g>
+            <g id="SUBTITLE">
+        <g id="SNIC">
+          <path class="st0" d="M144.4,185.7c-1-2.4-2.6-3.6-4.8-3.6c-2.6,0-4.3,1.4-4.3,3.7c-0.1,1,0.4,2,1.3,2.5c1.3,0.7,2.8,1.2,4.2,1.5
+              c1.4,0.3,2.7,0.8,3.9,1.4c1.9,1,2.8,2.3,2.9,4.8c0,5-3.1,7.6-7.9,7.6c-4.6,0-8-2.5-8.9-7.1l2.8-1.1c0.9,3.5,3,5.3,6.1,5.3
+              s4.9-1.5,4.9-4.3c0-0.8-0.3-1.6-0.9-2.2c-0.3-0.3-0.7-0.5-1.1-0.6c-1.1-0.5-2.2-0.8-3.4-1.1c-1.3-0.3-2.6-0.7-3.8-1.3
+              c-1.9-1-2.9-2.5-3-5.3c-0.1-1.8,0.6-3.5,1.9-4.8c1.5-1.3,3.4-2,5.3-1.9c3.3-0.1,6.3,2,7.4,5.1L144.4,185.7z"/>
+            <path class="st0" d="M167.9,179.6h3v23.8h-3.3l-10-18.4v18.4h-3v-23.8h3.3l10,18.4L167.9,179.6z"/>
+            <path class="st0" d="M193.5,203.4H179v-2.6h5.7v-18.6H179v-2.6h14.5v2.6h-5.8v18.6h5.8L193.5,203.4z"/>
+            <path class="st0" d="M219.2,196.4c-1.1,4.4-4.1,7.2-8.5,7.2c-2.7,0.1-5.3-1.1-7.1-3.1c-1.8-2.1-2.8-5.1-2.8-9s0.9-7,2.8-9
+              c1.8-2,4.4-3.2,7.1-3.1c4.4,0,7.4,2.9,8.5,7.2l-2.8,0.9c-1.1-3.5-2.8-5.2-5.7-5.2c-4.2,0-6.7,3-6.7,9.3s2.5,9.3,6.7,9.3
+              c3,0,4.6-1.7,5.7-5.2L219.2,196.4z"/>
+        </g>
+                <g id="_x32_020_x2F_2021">
+          <path class="st1" d="M225.2,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
+              c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.1-1.7,0.9-3.2,2.2-4.4c1.2-1.1,2.8-1.8,4.5-1.8c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2
+              c0,1.8-0.7,3.5-1.8,4.9l-7.2,9h9.4v2.6L225.2,202.3z"/>
+                    <path class="st1" d="M253.6,202.5c-2.4,0.1-4.7-1.1-6-3.1c-1.4-2.1-2.1-4.9-2.1-8.4s0.7-6.3,2.1-8.3c2.4-3.3,7-4.1,10.3-1.7
+              c0.6,0.5,1.2,1,1.7,1.7c1.6,2.5,2.3,5.4,2.2,8.3c0.1,2.9-0.6,5.9-2.2,8.4C258.3,201.5,256,202.6,253.6,202.5z M249.4,197.2
+              l6.6-14.2c-0.7-0.5-1.6-0.7-2.5-0.7c-3.4,0-5.4,3.4-5.4,8.9C248.2,193.2,248.6,195.3,249.4,197.2z M259,191.1
+              c0.1-2.1-0.3-4.2-1.2-6.1l-6.6,14.2c0.7,0.5,1.6,0.7,2.5,0.7C257,200,259,196.6,259,191.1z"/>
+                    <path class="st1" d="M269.9,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
+              c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.3-3.4,3.2-6.1,6.6-6.1c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2c0,1.8-0.6,3.5-1.8,4.9
+              l-7.2,9h9.4v2.6L269.9,202.3z"/>
+                    <path class="st1" d="M298.3,202.5c-2.4,0.1-4.7-1.1-6-3.1c-1.5-2.5-2.3-5.4-2.1-8.4c0-3.5,0.7-6.3,2.1-8.3c1.3-2,3.6-3.2,6-3.1
+              c2.4-0.1,4.7,1.1,6,3.1c1.6,2.5,2.3,5.4,2.2,8.3c0.1,2.9-0.6,5.9-2.2,8.4C303,201.5,300.7,202.6,298.3,202.5z M294.2,197.2
+              l6.6-14.2c-0.7-0.5-1.6-0.7-2.5-0.7c-3.4,0-5.4,3.4-5.4,8.9C292.9,193.2,293.3,195.3,294.2,197.2z M303.7,191.1
+              c0.1-2.1-0.3-4.2-1.2-6.1l-6.6,14.2c0.7,0.5,1.6,0.7,2.5,0.7C301.8,200,303.7,196.6,303.7,191.1L303.7,191.1z"/>
+                    <path class="st1" d="M325.7,178.3h2.8l-13,25.6h-2.7L325.7,178.3z"/>
+                    <path class="st1" d="M337,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
+              c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.1-1.7,0.9-3.2,2.2-4.4c1.2-1.1,2.8-1.8,4.5-1.8c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2
+              c0,1.8-0.7,3.5-1.8,4.9l-7.2,9h9.4v2.6L337,202.3z"/>
+                    <path class="st1" d="M365.4,202.5c-2.4,0.1-4.7-1.1-6-3.1c-1.4-2.1-2.1-4.9-2.1-8.4s0.7-6.3,2.1-8.3c2.4-3.3,7-4.1,10.3-1.7
+              c0.6,0.5,1.2,1,1.7,1.7c1.4,2,2.2,4.8,2.2,8.3c0.1,2.9-0.6,5.9-2.2,8.4C370.1,201.5,367.8,202.6,365.4,202.5z M361.2,197.2
+              l6.6-14.2c-0.7-0.5-1.6-0.7-2.5-0.7c-3.4,0-5.4,3.4-5.4,8.9C360,193.2,360.4,195.3,361.2,197.2z M370.8,191.1
+              c0.1-2.1-0.3-4.2-1.2-6.1l-6.6,14.2c0.7,0.5,1.6,0.7,2.5,0.7C368.8,200,370.8,196.6,370.8,191.1L370.8,191.1z"/>
+                    <path class="st1" d="M381.7,202.3V201l8.8-10.9c1.4-1.8,1.8-2.8,1.8-4.2c0-0.9-0.3-1.8-0.8-2.6c-0.7-0.8-1.7-1.2-2.7-1.1
+              c-2.1,0-3.6,1.6-3.9,4.1l-2.7-0.5c0.1-1.7,0.9-3.2,2.2-4.4c1.2-1.1,2.8-1.8,4.5-1.8c1.8-0.1,3.6,0.6,4.9,2c1,1.2,1.5,2.7,1.4,4.2
+              c0,1.8-0.6,3.5-1.8,4.9l-7.2,9h9.4v2.6L381.7,202.3z"/>
+                    <path class="st1" d="M411.4,179.9h1v19.9h5.8v2.4H404v-2.4h5.7V184l-5.6,3.3v-2.9L411.4,179.9z"/>
+        </g>
+      </g>
+            <g id="BLOCKS">
+        <rect x="516.2" class="st0" width="102.5" height="24.8"/>
+                <rect x="423.1" y="178.8" class="st0" width="106.2" height="24.5"/>
+                <rect x="768.2" y="130.9" class="st0" width="127.6" height="24.8"/>
+                <rect y="103.1" class="st0" width="24.8" height="24.8"/>
+      </g>
+            <g id="BARS">
+        <g id="Bar-1" class="rellax-horizontal" data-rellax-horizontal-speed="1" data-rellax-vertical-scroll-axis="x">
+          <rect x="226.4" y="82.9" class="st1" width="128.6" height="9.4"/>
+        </g>
+                <g id="Bar-2" class="rellax-horizontal" data-rellax-horizontal-speed="-0.5" data-rellax-vertical-scroll-axis="x">
+          <rect x="322.4" y="7.7" class="st1" width="128.6" height="9.4"/>
+        </g>
+                <g id="Bar-3" class="rellax-horizontal" data-rellax-horizontal-speed="-0.5" data-rellax-vertical-scroll-axis="x">
+          <rect x="459.2" y="110.8" class="st1" width="128.6" height="9.4"/>
+        </g>
+                <g id="Bar-4" class="rellax-horizontal" data-rellax-horizontal-speed="-1" data-rellax-vertical-scroll-axis="x">
+          <rect x="631.6" y="173.5" class="st1" width="128.6" height="9.4"/>
+        </g>
+                <g id="Bar-5" class="rellax-horizontal" data-rellax-horizontal-speed="2" data-rellax-vertical-scroll-axis="x">
+          <rect x="687.3" y="82.9" class="st0" width="128.6" height="9.4"/>
+        </g>
+                <g id="Bar-6" class="rellax-horizontal" data-rellax-horizontal-speed="1.5" data-rellax-vertical-scroll-axis="x">
+          <rect x="36.2" y="138.6" class="st1" width="128.6" height="9.4"/>
+        </g>
+      </g>
+    </svg>
+    </figure>
+        <h2 class="mb-5">
+            <time datetime="2021-11-23">23 November</time>
+        </h2>
+    </header>
+    <div class="banner">
         <img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg">
         <img alt="Rijskuniversiteit Groningen - Bernoulli institute" src="img/partners/rug-bernouli.png">
         <img alt="Universiteit Twente" src="img/partners/utwente.svg">
         <img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg">
-      </div>
-    </header>
-    <h1 style="display: none">SNIC 2020 - MobilIT</h1>
-    <nav role="navigation">
-      <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#theme">Theme</a></li>
-          <li><a href="#corona">Corona</a></li>
-          <li><a href="#speakers">Speakers</a></li>
-          <li><a href="#partners">Partners</a></li>
-          <li><a href="#location">Location</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+        <img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg">
+        <img alt="Rijskuniversiteit Groningen - Bernoulli institute" src="img/partners/rug-bernouli.png">
+        <img alt="Universiteit Twente" src="img/partners/utwente.svg">
+        <img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg">
+    </div>
+    <section id="theme" class="fullscreen snap blue d-flex align-items-center justify-content-center">
+        <div class="brown block position-absolute rellax d-none d-sm-block" data-rellax-speed=" 3" data-rellax-percentage="0.5" style="height: 70vh; width: 2vw; margin-left: -45%; margin-top: -15vh;"></div>
+        <div class="white block position-absolute rellax" data-rellax-speed=" 2" data-rellax-percentage="0.5" style="height:  5vw; width: 5vw; margin-left: -25%; margin-top: -25vh;"></div>
+        <div class="brown block position-absolute rellax" data-rellax-speed="-3" data-rellax-percentage="0.5" style="height: 50vh; width: 2vw; margin-left:  10%; margin-top: -35vh;"></div>
+        <div class="white block position-absolute rellax" data-rellax-speed="10" data-rellax-percentage="0.5" style="height: 20vh; width: 5vw; margin-left:  25%; margin-top:   5vh;"></div>
+        <div class="brown block position-absolute rellax d-none d-sm-block" data-rellax-speed="-4" data-rellax-percentage="0.5" style="height:  5vw; width: 5vw; margin-left:  42%; margin-top: -12vh;"></div>
+        <div class="container backdrop rellax my-4 px-5" data-rellax-speed="5" data-rellax-percentage="0.5">
+            <article>
+                <h2>Theme</h2>
+                <p>
+                    The focus of this edition of SNiC will be on the IT of mobility. For the past years there have been major leaps
+                    forward in the use of computers and AI in vehicles - think self driving cars, the optimisation of fuel usage in
+                    aeroplanes, or apps that perform diagnostics on the engine of your motorcycle. But MobilIT can be extended to
+                    much more than that: we can analyse the organisation of public transportation, or take a closer look at the
+                    latest innovations in bionics and cybernetics - tech that will open up a future of mobility for everyone.
+                </p>
+                <p>
+                    During SNiC 2020/2021 we will approach the future of mobility from a wide variety of angles: security is
+                    essential for high-tech transportation in an age of self driving cars and cyber-warfare; theoretical computing
+                    science is the core discipline behind route optimisation algorithms; Artificial limbs are almost completely
+                    computer driven; and of course Artificial Intelligence will play a starring role.
+                </p>
+            </article>
+        </div>
+    </section>
+    <section id="corona" class="fullscreen snap white d-flex align-items-center justify-content-center">
+        <div class="container backdrop rellax my-4 px-5" data-rellax-speed="5" data-rellax-percentage="0.5">
+            <article>
+                <h2>Corona</h2>
+                <p>
+                    Our conference has sadly been plagued by the corona virus. Last year we had to cancel the 2020 edition,
+                    because the corona measures simply did not allow a physical congress in any form.
+                </p>
+                <p>
+                    <strong>This year we are more optimistic!</strong>
+                </p>
+                <p>
+                    We believe that with the vaccines being deployed faster and faster a normal conference in
+                    november 2021 will be entirely feasible. In the small chance that we cannot host 700 people, we will try to
+                    bring as many people as possible to our venue. We will then organize an online alternative for the people
+                    that are not able to join in Apeldoorn. This way we ensure that as many people can have a good conference,
+                    and sponsors will still be able to reach the students.
+                </p>
+            </article>
+        </div>
+    </section>
+    <section id="speakers" class="fullscreen snap blue d-flex align-items-center justify-content-center">
+        <div class="container backdrop my-4 px-5 rellax" data-rellax-speed="5" data-rellax-percentage="0.5">
+            <article>
+                <div class="d-flex flex-row-reverse flex-wrap justify-content-evenly align-items-center">
+                    <div class="col-12 col-lg-5">
+                        <h2>Speakers</h2>
+                        <p>
+                            As always we are working on an amazing line-up of speakers to present at our conference. We are, however, still
+                            actively looking for more people that would like to give a talk. Thus if you would be interested in presenting
+                            an interesting subject that fits in our theme, do not hesitate to send us an email at
+                            <a href="mailto:speakers@2020.snic.nl">speakers@2020.snic.nl</a>.
+                            We would very much like to hear about more amazing areas in MobilIT.
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-10 col-md-7 col-lg-6 m-lg-0 m-3">
+                        <div id="speaker-carousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner ratio ratio-4x3">
+                                <div class="carousel-item active">
+                                    <img src="img/location/spreker.jpg" class="d-block h-100 w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/location/rabobankzaal.jpg" class="d-block h-100 w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/location/altioszaal.jpg" class="d-block h-100 w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#speaker-carousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#speaker-carousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section id="partners" class="fullscreen snap white" style="height: 100vh">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-stretch justify-content-center p-3 partner-grid rellax" data-rellax-speed="5" data-rellax-percentage="0.5" style="height: 100vh">
+                <div class="col-12">
+                        <h2 class="text-center mt-2 mb-0">Partners</h2>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Twente" src="img/partners/utwente.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Twente" src="img/partners/utwente.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Twente" src="img/partners/utwente.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
+                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="fullscreen snap blue d-flex justify-content-evenly align-items-center">
+        <div class="container backdrop my-5 px-5"> <!--No rellax here as it will create non-scrollable space at the bottom-->
+            <article>
+                <h2>About SNiC</h2>
+                <p>
+                    SNiC, Stichting Nationaal informatica Congres (which can be translated as the Foundation National Informatics
+                    Congress), was established in December 2004. 9 study associations from 7 cities in the Netherlands are
+                    affiliated. The aim of the foundation is to stimulate interest in knowledge of information and communication
+                    technology, and to promote contact between students and the business world.
+                </p>
+                <p>
+                    Every year one of the associations of the foundation organizes a congress with an IT related subject. On
+                    <time datetime="2021-11-23">November 23rd in 2021</time>, the congress will be organized by two study associations from the Radboud University in
+                    Nijmegen. These associations are Thalia (the study association for Computer Science and Information Science
+                    students) and CognAC (the study association for Artificial Intelligence students).
+                </p>
+                <p>
+                    Visitors are enthusiastic Computer Science and Artificial Intelligence bachelor and master students from all
+                    over the country. Over the past years the congress has grown considerably. Where in 2017 the congress was
+                    visited by 450 students, we expect around 700 visitors in 2021.
+                </p>
+                <p>
+                    Various talks will be held at the congress by speakers from both the business world and the academic world.
+                    The students are challenged to dive into a specific topic from different perspectives. We want to inspire them
+                    and invite them to think further than their current views.
+                </p>
+                <p>
+                    In addition, it is the chance for students to speak with many companies during the breaks and the drinks at
+                    the company fair, to connect with potential employers or to find a thesis or internship spot.
+                </p>
+                <br>
+                <h3>Contact</h3>
+                <p>
+                    <a href="mailto:committee@2020.snic.nl">committee@2020.snic.nl</a><br>
+                </p>
+                <p>
+                    Toernooiveld 212, M1.0.08<br>
+                    6525 EC Nijmegen<br>
+                    The Netherlands
+                </p>
+            </article>
+        </div>
+    </section>
+    <div class="snap-end"></div> <!--Fake element to allow users to snap to the bottom of the page-->
+</main>
+<aside id="sidebar" class="offcanvas offcanvas-end blue" tabindex="-1" aria-labelledby="sidebar">
+    <button type="button" class="btn-close btn-close-white text-reset position-fixed top-0 end-0 m-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <nav id="navbar" class="nav nav-pills flex-column align-items-stretch p-3">
+        <a class="nav-link navbar-brand m-4" href="#mobilit"><img alt="MobilIT" src="img/MobilIT-small.svg" width="auto" height="auto"></a>
+        <a class="nav-link" href="#theme">Theme</a>
+        <a class="nav-link" href="#corona">Corona</a>
+        <a class="nav-link" href="#speakers">Speakers</a>
+        <a class="nav-link" href="#partners">Partners</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link mt-5" href="/login.html">Login</a>
     </nav>
-    <section id="theme">
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="-2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-      </div>
-      <article>
-        <h2>Theme</h2>
-        <p>
-          The focus of this edition of SNiC will be on the IT of mobility. For the past years there have been major leaps
-          forward in the use of computers and AI in vehicles - think self driving cars, the optimisation of fuel usage in
-          aeroplanes, or apps that perform diagnostics on the engine of your motorcycle. But MobilIT can be extended to
-          much more than that: we can analyse the organisation of public transportation, or take a closer look at the
-          latest innovations in bionics and cybernetics - tech that will open up a future of mobility for everyone.
-        </p>
-        <p>
-          During SNiC 2020/2021 we will approach the future of mobility from a wide variety of angles: security is
-          essential for high-tech transportation in an age of self driving cars and cyber-warfare; theoretical computing
-          science is the core discipline behind route optimisation algorithms; Artificial limbs are almost completely
-          computer driven; and of course Artificial Intelligence will play a starring role.
-        </p>
-      </article>
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="0.5" data-rellax-percentage="0.5" style="height: 40px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="-.2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 600px;"></div>
-      </div>
-    </section>
-    <section id="corona" class="multi-panel">
-      <img alt="Altioszaal" src="img/location/altioszaal.jpg">
-      <div class="panel">
-        <article>
-          <h2>Corona</h2>
-          <p>
-            Our conference has sadly been plagued by the corona virus. Last year we had to cancel the 2020 edition,
-            because the corona measures simply did not allow a physical congress in any form.
-          </p>
-          <p>
-            <strong>This year we are more optimistic!</strong>
-          </p>
-          <p>
-            We believe that with the vaccines being deployed faster and faster a normal conference in
-            november 2021 will be entirely feasible. In the small chance that we cannot host 700 people, we will try to
-            bring as many people as possible to our venue. We will then organize an online alternative for the people
-            that are not able to join in Apeldoorn. This way we ensure that as many people can have a good conference,
-            and sponsors will still be able to reach the students.
-          </p>
-        </article>
-      </div>
-    </section>
-    <section id="speakers">
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-      </div>
-      <article>
-        <h2>Speakers</h2>
-        <p>
-          As always we are working on an amazing line-up of speakers to present at our conference. We are, however, still
-          actively looking for more people that would like to give a talk. Thus if you would be interested in presenting
-          an interesting subject that fits in our theme, do not hesitate to send us an email at
-          <a href="mailto:speakers@2020.snic.nl">speakers@2020.snic.nl</a>.
-          We would very much like to hear about more amazing areas in MobilIT.
-        </p>
-        <img alt="Sprekers" src="img/location/spreker.jpg">
-      </article>
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-      </div>
-    </section>
-    <section id="partners">
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-      </div>
-      <article>
-          <h2>Partners</h2>
-          <p>
-            Next to the talks, there is a company fair with about 12-15 companies. Some of these companies are linked to
-            the theme, but this is not necessarily the case. They are interested in getting to know you! You might be
-            looking for an internship or job, or you want to get to know more about the opportunities they offer.
-            During the breaks you are able to meet the different companies. Apart from the fair, there is the option to
-            speed date with the companies.
-          </p>
-          <p>
-            We are still looking for partnerships! You can email us at
-            <a href="mailto:partners@2020.snic.nl">partners.2020@snic.nl</a>
-            for more information.
-          </p>
-      </article>
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-      </div>
-    </section>
-    <section id="location" class="multi-panel">
-      <div class="panel">
-        <article>
-          <h2>Location</h2>
-          <p>
-            This year we have the pleasure of hosting our event at Orpheus Apeldoorn. Orpheus has 3 beautiful halls
-            where our speakers will give their talks. Their massive foyer has enough room for all the interesting
-            stands our sponsors will facilitate. Furthermore, it is located in the middle of the Netherlands to make
-            sure no single study association has a long travel time.
-          </p>
-          <div id="map"></div>
-        </article>
-      </div>
-      <img alt="Rabobankzaal" src="img/location/rabobankzaal.jpg">
-    </section>
-    <section id="contact">
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-      </div>
-      <article>
-          <h2>About SNiC</h2>
-          <p>
-            SNiC, Stichting Nationaal informatica Congres (which can be translated as the Foundation National Informatics
-            Congress), was established in December 2004. 9 study associations from 7 cities in the Netherlands are
-            affiliated. The aim of the foundation is to stimulate interest in knowledge of information and communication
-            technology, and to promote contact between students and the business world.
-          </p>
-          <p>
-            Every year one of the associations of the foundation organizes a congress with an IT related subject. On
-            <time datetime="2021-11-23">November 23rd in 2021</time>, the congress will be organized by two study associations from the Radboud University in
-            Nijmegen. These associations are Thalia (the study association for Computer Science and Information Science
-            students) and CognAC (the study association for Artificial Intelligence students).
-          </p>
-          <p>
-            Visitors are enthusiastic Computer Science and Artificial Intelligence bachelor and master students from all
-            over the country. Over the past years the congress has grown considerably. Where in 2017 the congress was
-            visited by 450 students, we expect around 700 visitors in 2021.
-          </p>
-          <p>
-            Various talks will be held at the congress by speakers from both the business world and the academic world.
-            The students are challenged to dive into a specific topic from different perspectives. We want to inspire them
-            and invite them to think further than their current views.
-          </p>
-          <p>
-            In addition, it is the chance for students to speak with many companies during the breaks and the drinks at
-            the company fair, to connect with potential employers or to find a thesis or internship spot.
-          </p>
-          <br>
-          <h3>Contact</h3>
-          <p>
-            <a href="mailto:committee@2020.snic.nl">committee@2020.snic.nl</a><br>
-          </p>
-          <p>
-            Toernooiveld 212, M1.0.08<br>
-            6525 EC Nijmegen<br>
-            The Netherlands
-          </p>
-          <img alt="Truck splashes on off-road" src="img/truck-splashes-on-off-road.jpg">
-      </article>
-      <div class="bar-container">
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="2" data-rellax-percentage="0.5" style="height: 200px;"></div>
-        <div class="bar rellax d-none d-lg-block" data-rellax-speed="8" data-rellax-percentage="0.5" style="height: 600px;"></div>
-        <div class="bar rellax d-none d-xl-block" data-rellax-percentage="0.5" style="height: 100px;"></div>
-      </div>
-    </section>
-  <script>
-    let rellax_horizontal = Rellax('.rellax-horizontal', {horizontal: true});
-    let rellax = Rellax('.rellax');
-  </script>
-  <script>
-    function initMap() {
-      const location = { lat: 52.2198648, lng: 5.953317 };
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 16,
-        center: location,
-        zoomControl: false,
-        mapTypeControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        rotateControl: false,
-        fullscreenControl: false,
-        styles: [
-          { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-          {
-            elementType: "labels.text.stroke",
-            stylers: [{ color: "#242f3e" }],
-          },
-          {
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#746855" }],
-          },
-          {
-            featureType: "administrative.locality",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#d59563" }],
-          },
-          {
-            featureType: "poi",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#d59563" }],
-          },
-          {
-            featureType: "poi.park",
-            elementType: "geometry",
-            stylers: [{ color: "#263c3f" }],
-          },
-          {
-            featureType: "poi.park",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#6b9a76" }],
-          },
-          {
-            featureType: "road",
-            elementType: "geometry",
-            stylers: [{ color: "#38414e" }],
-          },
-          {
-            featureType: "road",
-            elementType: "geometry.stroke",
-            stylers: [{ color: "#212a37" }],
-          },
-          {
-            featureType: "road",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#9ca5b3" }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "geometry",
-            stylers: [{ color: "#746855" }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "geometry.stroke",
-            stylers: [{ color: "#1f2835" }],
-          },
-          {
-            featureType: "road.highway",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#f3d19c" }],
-          },
-          {
-            featureType: "transit",
-            elementType: "geometry",
-            stylers: [{ color: "#2f3948" }],
-          },
-          {
-            featureType: "transit.station",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#d59563" }],
-          },
-          {
-            featureType: "water",
-            elementType: "geometry",
-            stylers: [{ color: "#17263c" }],
-          },
-          {
-            featureType: "water",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#515c6d" }],
-          },
-          {
-            featureType: "water",
-            elementType: "labels.text.stroke",
-            stylers: [{ color: "#17263c" }],
-          },
-        ],
-      });
-      const marker = new google.maps.Marker({
-        position: location,
-        map: map,
-      });
-    }
-  </script>
+</aside>
+<script>
+    let rh = Rellax('.rellax-horizontal', {horizontal: true, wrapper: 'main'});
+    let rv = Rellax('.rellax', {wrapper: 'main'});
+</script>
 </body>
-
-</html>
