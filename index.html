@@ -25,12 +25,14 @@
                 dots: false,
                 pauseOnHover: false,
                 slidesToScroll: 1,
-                slidesToShow: 6,
+                slidesToShow: 8,
                 useTransform: false, // otherwise Safari will show glitches
                 responsive: [
-                    {breakpoint: 1000, settings: {slidesToShow: 5}},
-                    {breakpoint:  800, settings: {slidesToShow: 4}},
-                    {breakpoint:  600, settings: {slidesToShow: 3}},
+                    {breakpoint: 1400, settings: {slidesToShow: 8}},
+                    {breakpoint: 1200, settings: {slidesToShow: 6}},
+                    {breakpoint:  992, settings: {slidesToShow: 5}},
+                    {breakpoint:  768, settings: {slidesToShow: 4}},
+                    {breakpoint:  576, settings: {slidesToShow: 3}},
                     {breakpoint:  400, settings: {slidesToShow: 2}},
                     {breakpoint:  200, settings: {slidesToShow: 1}},
                 ]
@@ -225,14 +227,23 @@
         </h2>
     </header>
     <div class="banner">
+        <img alt="Picnic" src="img/partners/picnic.svg">
+        <img alt="Quintor" src="img/partners/quintor.jpg">
+        <img alt="ANWB" src="img/partners/anwb.svg">
+        <img alt="Nedap" src="img/partners/nedap.png">
+        <img alt="ASML" class="p-3" src="img/partners/asml.svg">
+        <img alt="DSW" src="img/partners/dsw.svg">
+        <img alt="Chipsoft" class="p-3" src="img/partners/chipsoft.svg">
+        <img alt="Cofano" class="p-3" src="img/partners/cofano.svg">
+        <img alt="Rijksoverheid" src="img/partners/rijksoverheid.svg">
+        <img alt="YER" src="img/partners/yer.jpg">
+        <img alt="TomTom" class="p-3" src="img/partners/tomtom.svg">
         <img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg">
-        <img alt="Rijskuniversiteit Groningen - Bernoulli institute" src="img/partners/rug-bernouli.png">
+        <img alt="Rijskuniversiteit Groningen" class="py-2" src="img/partners/rug.svg">
         <img alt="Universiteit Twente" src="img/partners/utwente.svg">
         <img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg">
-        <img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg">
-        <img alt="Rijskuniversiteit Groningen - Bernoulli institute" src="img/partners/rug-bernouli.png">
-        <img alt="Universiteit Twente" src="img/partners/utwente.svg">
-        <img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg">
+        <img alt="Eindhoven University of Technology" src="img/partners/tue.svg">
+        <img alt="University of Amsterdam" class="p-3" src="img/partners/uva.svg">
     </div>
     <section id="theme" class="fullscreen snap blue d-flex align-items-center justify-content-center">
         <div class="brown block position-absolute rellax d-none d-sm-block" data-rellax-speed=" 3" data-rellax-percentage="0.5" style="height: 70vh; width: 2vw; margin-left: -45%; margin-top: -15vh;"></div>
@@ -321,24 +332,27 @@
             </article>
         </div>
     </section>
-    <section id="partners" class="fullscreen snap white" style="height: 100vh">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-stretch justify-content-center p-3 partner-grid rellax" data-rellax-speed="5" data-rellax-percentage="0.5" style="height: 100vh">
-                <div class="col-12">
-                        <h2 class="text-center mt-2 mb-0">Partners</h2>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Twente" src="img/partners/utwente.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Twente" src="img/partners/utwente.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Twente" src="img/partners/utwente.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Radboud Universiteit - iCIS" src="img/partners/ru-icis.svg"></div>
-                <div class="col-6 col-sm-4 col-lg-3 p-3"><img alt="Universiteit Leiden - LIACS" src="img/partners/ul-liacs.svg"></div>
+    <section id="partners" class="fullscreen snap white d-flex align-items-center justify-content-center">
+        <div class="container my-4 px-5 rellax" data-rellax-speed="5" data-rellax-percentage="0.5">
+            <div class="col-12">
+                <h2 class="text-center mt-2 mb-0">Partners</h2>
+            </div>
+            <div class="row justify-content-evenly align-items-center my-4 mt-sm-5">
+                <div class="col-7 col-md-4 p-3"><img class="img-fluid" alt="ANWB" src="img/partners/anwb.svg"></div>
+                <div class="col-6 col-md-4 p-3"><img class="img-fluid" alt="Nedap" src="img/partners/nedap.png"></div>
+                <div class="col-6 col-md-4 p-3"><img class="img-fluid" alt="Quintor" src="img/partners/quintor.jpg"></div>
+            </div>
+            <div class="row justify-content-evenly align-items-center my-4 mt-sm-5">
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="Chipsoft" src="img/partners/chipsoft.svg"></div>
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid p-1" alt="DSW" src="img/partners/dsw-ict.svg"></div>
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid p-4" alt="Picnic" src="img/partners/picnic.svg"></div>
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="Rijksoverheid" src="img/partners/rijksoverheid.svg"></div>
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="YER" src="img/partners/yer.jpg"></div>
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="TomTom" src="img/partners/tomtom.svg"></div>
+            </div>
+            <div class="row justify-content-evenly align-items-center my-4 mt-sm-5">
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="ASML" src="img/partners/asml.svg"></div>
+                <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="Cofano" src="img/partners/cofano.svg"></div>
             </div>
         </div>
     </section>

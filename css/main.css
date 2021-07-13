@@ -188,13 +188,6 @@ section {
     padding: 10px;
 }
 
-
-
-.partner-grid > div > img {
-    position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
-}
 /* Navbar */
 
 .nav-pills .navbar-brand {
@@ -238,4 +231,12 @@ section {
 .btn-primary:hover {
     background-color: var(--blue);
     border-color: var(--blue);
+}
+
+
+
+/* CARDS */
+
+.card {
+    border-radius: 0;
 }
