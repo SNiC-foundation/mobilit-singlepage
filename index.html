@@ -349,16 +349,16 @@
                     <h2 class="text-center mt-2 mb-0">Partners</h2>
                 </div>
                 <div class="row justify-content-evenly align-items-center my-4 mt-sm-5">
-                    <div class="col-7 col-md-3 p-3"><img class="img-fluid" alt="ANWB" src="img/partners/anwb.svg"></div>
-                    <div class="col-6 col-md-3 p-3"><img class="img-fluid" alt="Nedap" src="img/partners/nedap.png"></div>
+                    <div class="col-7 col-md-3 p-3" data-bs-target="#partnerModalANWB" data-bs-toggle="modal" data-bs-dismiss="modal"><img class="img-fluid partner-logo-modal-trigger" alt="ANWB" src="img/partners/anwb.svg"></div>
+                    <div class="col-6 col-md-3 p-3"><img class="img-fluid partner-logo-modal-trigger" alt="Nedap" src="img/partners/nedap.png"></div>
                 </div>
                 <div class="row justify-content-evenly align-items-center my-4 mt-sm-5">
-                    <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="Chipsoft" src="img/partners/chipsoft.svg"></div>
-                    <div class="col-4 col-md-2 p-3"><img class="img-fluid p-1" alt="DSW" src="img/partners/dsw-ict.svg"></div>
-                    <div class="col-4 col-md-2 p-3"><img class="img-fluid p-4" alt="Picnic" src="img/partners/picnic.svg"></div>
+                    <div class="col-4 col-md-2 p-3"><img class="img-fluid partner-logo-modal-trigger" alt="Chipsoft" src="img/partners/chipsoft.svg"></div>
+                    <div class="col-4 col-md-2 p-3"><img class="img-fluid partner-logo-modal-trigger p-1" alt="DSW" src="img/partners/dsw-ict.svg"></div>
+                    <div class="col-4 col-md-2 p-3"><img class="img-fluid partner-logo-modal-trigger p-4" alt="Picnic" src="img/partners/picnic.svg"></div>
                 </div>
                 <div class="row justify-content-evenly align-items-center my-4 mt-sm-5">
-                    <div class="col-4 col-md-2 p-3"><img class="img-fluid" alt="ASML" src="img/partners/asml.svg"></div>
+                    <div class="col-4 col-md-2 p-3"><img class="img-fluid partner-logo-modal-trigger" alt="ASML" src="img/partners/asml.svg"></div>
                 </div>
             </article>
         </div>
@@ -413,6 +413,44 @@
     </section>
     <div class="snap-end"></div> <!--Fake element to allow users to snap to the bottom of the page-->
 </main>
+<div class="modal fade" id="partnerModalANWB" aria-hidden="true" aria-labelledby="partnerModalANWB" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="partnerModalLabelANWB">ANWB</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget dapibus metus.
+                    Nullam nisl nisl, viverra a rhoncus a, scelerisque id ante. Duis sit amet tellus ex.
+                    Pellentesque porttitor vestibulum ex, ut malesuada lacus placerat at. Proin ut placerat
+                    enim. Vestibulum posuere augue arcu, congue ornare tortor auctor id. Nullam vel imperdiet
+                    velit, nec pellentesque ex. Maecenas sit amet orci vel elit lobortis rhoncus.
+                </p>
+                <p>
+                    Suspendisse at dictum dolor. Donec dictum est sed facilisis posuere. Vivamus tempor enim
+                    risus, eu fermentum nunc pretium vel. Aenean a venenatis tellus. Aliquam id nisl in dolor
+                    consequat varius vitae sed dolor. Nam ac enim sagittis lectus convallis convallis in non
+                    tellus. Aliquam eu sapien consectetur, interdum orci sit amet, vulputate est. Donec eu
+                    risus enim. Quisque eleifend lectus gravida dictum elementum. Quisque sit amet pretium
+                    ligula. Suspendisse potenti. Aenean at venenatis diam, ac consequat quam. Sed in egestas
+                    felis. Maecenas a congue velit. In eget feugiat sem.
+                </p>
+                <p>
+                    Ut nec enim iaculis, fermentum lorem a, vestibulum sem. Morbi ullamcorper aliquam metus,
+                    non vehicula tellus auctor at. Ut eu enim nec purus condimentum dignissim. Sed rhoncus,
+                    velit eget congue accumsan, mauris urna pulvinar urna, eget semper mauris ipsum sed turpis.
+                    Integer quis diam magna. Nullam tincidunt aliquet purus, quis malesuada justo dapibus non.
+                    Pellentesque et urna imperdiet, euismod sapien vel, egestas elit. Suspendisse potenti. In
+                    et massa viverra, dignissim quam non, pulvinar velit. Maecenas dui orci, consequat sed
+                    tempor in, euismod sed mi. Integer pulvinar scelerisque urna ut accumsan.
+                </p>
+                <img src="https://www.anwb.nl/binaries/content/gallery/anwb/nieuws/over-anwb/2019/januari/alarmcentrale1520x855.jpg/alarmcentrale1520x855.jpg/anwb%3Aw760" class="img-fluid rounded mx-auto d-block m-3 w-100" height="50px" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
 <aside id="sidebar" class="offcanvas offcanvas-end blue" tabindex="-1" aria-labelledby="sidebar">
     <button type="button" class="btn-close btn-close-white text-reset position-fixed top-0 end-0 m-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     <nav id="navbar" class="nav nav-pills flex-column align-items-stretch p-3">
