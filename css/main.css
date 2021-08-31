@@ -83,6 +83,10 @@ header {
     position: relative;
 }
 
+header:not(.fullscreen) {
+    width: 100vw;
+    height: 50vh;
+}
 
 /* Menu toggle */
 
