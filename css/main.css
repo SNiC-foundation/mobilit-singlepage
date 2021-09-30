@@ -236,7 +236,11 @@ section {
     background-color: var(--brown);
     border-color: var(--brown);
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:focus-visible
+.btn-primary:focus-within{
     background-color: var(--blue);
     border-color: var(--blue);
 }
