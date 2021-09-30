@@ -89,13 +89,8 @@
 </head>
 <body>
 <main>
-  <div id="menuToggle" class="position-fixed top-0 end-0 m-3" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <header id="mobilit" class="snap d-flex flex-column align-items-center justify-content-center" style="min-height: 50vh;">
-    <figure class="logo container col-12 col-sm-10 col-md-8 col-lg-6 px-5 m-0 mb-5">
+  <header id="mobilit" class="d-flex flex-column align-items-center justify-content-center sticky-top" >
+    <figure class="logo col-12 col-sm-9 col-md-6 col-lg-4 px-5 my-3">
       <svg version="1.1" id="MOBILITLOGO" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
            y="0px" viewBox="0 0 895.8 205.9" style="enable-background:new 0 0 895.8 205.9;" xml:space="preserve">
           <style type="text/css">
@@ -199,15 +194,23 @@
     </svg>
     </figure>
   </header>
-  <section id="corona" class="fullscreen snap white d-flex align-items-center justify-content-center">
+  <div id="menuToggle" class="position-fixed top-0 end-0 m-3" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <section id="corona" class="white d-flex align-items-center justify-content-center">
     <div class="brown block position-absolute rellax d-none d-sm-block" data-rellax-speed=" 3" data-rellax-percentage="0.5" style="height: 60vh; width: 2vw; margin-left: -45%; margin-top: -15vh;"></div>
     <div class="blue block position-absolute rellax" data-rellax-speed="-2" data-rellax-percentage="0.5" style="height:  8vw; width: 5vw; margin-left: -25%; margin-top: -25vh;"></div>
     <div class="brown block position-absolute rellax" data-rellax-speed="4" data-rellax-percentage="0.5" style="height: 40vh; width: 2vw; margin-left:  10%; margin-top: -35vh;"></div>
     <div class="blue block position-absolute rellax" data-rellax-speed="6" data-rellax-percentage="0.5" style="height: 15vh; width: 5vw; margin-left:  25%; margin-top:   5vh;"></div>
     <div class="brown block position-absolute rellax d-none d-sm-block" data-rellax-speed="-1" data-rellax-percentage="0.5" style="height:  5vw; width: 5vw; margin-left:  42%; margin-top: -12vh;"></div>
-    <div class="container backdrop rellax my-4 px-5" data-rellax-speed="3" data-rellax-percentage="0.5">
-      <article class="text-center">
-        <h2>Schedule</h2>
+    <div class="container backdrop my-4 px-5">
+      <article class="text-center timetable">
+        <h1 class="mt-3">Schedule</h1>
+        <p>
+          Create your personal schedule by selecting the your track sessions below.
+        </p>
         <div class="card my-5">
           <div class="card-header">
             <small class="text-muted">09:00 - 10:00</small>
@@ -430,7 +433,6 @@
       </article>
     </div>
   </section>
-  <div class="snap-end"></div> <!--Fake element to allow users to snap to the bottom of the page-->
 </main>
 <aside id="sidebar" class="offcanvas offcanvas-end blue" tabindex="-1" aria-labelledby="sidebar">
   <button type="button" class="btn-close btn-close-white text-reset position-fixed top-0 end-0 m-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>

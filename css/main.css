@@ -85,7 +85,11 @@ header {
 
 header:not(.fullscreen) {
     width: 100vw;
-    height: 50vh;
+    z-index: 500;
+}
+
+header:not(.fullscreen) >.logo {
+    min-height: 20px;
 }
 
 /* Menu toggle */
@@ -244,3 +248,19 @@ section {
 .card {
     border-radius: 0;
 }
+.card > img {
+    border-radius: 0;
+}
+.timetable .card-group > * {
+    opacity: 30%;
+}
+.timetable .card-group {
+    background-color: white
+}
+.timetable .card-group .card:hover,
+.timetable .card-group .card:active,
+.timetable .card-group .card:focus {
+    border-left: 1px solid rgba(0,0,0,.125);
+    opacity: 100%;
+}
+
