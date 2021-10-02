@@ -235,8 +235,11 @@ section {
 .nav-link:hover {
     color: var(--brown);
 }
-.offcanvas {
+#sidebar.offcanvas {
     width: 300px;
+}
+#profile.offcanvas {
+    min-width: 50vw;
 }
 
 
@@ -283,6 +286,7 @@ section {
 .timetable .card-group .card:focus {
     border-left: 1px solid rgba(0,0,0,.125);
     opacity: 100%;
+    cursor: pointer;
 }
 
 .block {
@@ -338,4 +342,8 @@ section {
 }
 #partners .card:hover {
     background-color: rgba(var(--blue-rgb), 0.4);
+}
+
+.modal-content {
+    border-radius: 0;
 }
