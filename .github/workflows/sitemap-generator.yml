@@ -25,5 +25,6 @@ jobs:
       - uses: fregante/setup-git-user@v1
       - name: Commit & push sitemap
         run: |-
+          git add sitemap.xml
           git commit -a -m "Update sitemap"
           git push origin HEAD:${{ github.event.pull_request.head.ref }}
