@@ -1,0 +1,455 @@
+:root {
+  --blue: #2d2e83;
+  --blue-rgb: 45, 46, 131;
+  --brown: #d5a361;
+  --brown-rgb: 213, 163, 97;
+}
+
+.white {
+  background: white;
+  color: black;
+}
+
+.brown {
+  background: var(--brown);
+  color: white;
+}
+
+.blue {
+  background: var(--blue);
+  color: white;
+}
+
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("/font/Apercu Mono.otf");
+}
+@font-face {
+  font-family: "Apercu Light";
+  src: url("/font/Apercu Light.otf");
+}
+body {
+  font-family: "Apercu Light", sans-serif;
+  text-align: justify;
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Apercu Mono", monospace;
+  text-transform: uppercase;
+}
+
+blockquote {
+  font-family: "Apercu Mono", monospace;
+  text-transform: uppercase;
+}
+
+figcaption {
+  font-family: "Apercu Light", sans-serif;
+  color: var(--blue);
+}
+
+.blockquote-footer {
+  color: var(--blue);
+}
+
+a {
+  color: var(--blue);
+}
+
+.blue a {
+  color: var(--brown);
+}
+
+body {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+}
+
+main {
+  position: relative;
+  height: 100%;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}
+
+.fullscreen {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+header {
+  background-color: var(--blue);
+  color: white;
+  position: relative;
+}
+
+header:not(.fullscreen) {
+  width: 100vw;
+  z-index: 500;
+}
+
+header:not(.fullscreen) > .logo {
+  min-height: 20px;
+}
+
+.logo > * {
+  display: block;
+  margin: auto;
+  max-height: 100%;
+}
+
+.artwork {
+  margin: 0;
+}
+
+.artwork > * {
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+
+/* Menu toggle */
+#menuToggle {
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#menuToggle span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin-bottom: 4px;
+  background: #cccccc;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menuToggle:hover span {
+  background: #ffffff;
+  box-shadow: 0 0 2px #232323;
+}
+
+#menuToggle:hover span:nth-child(3) {
+  transform: translateX(3px);
+}
+
+#menuToggle:hover span:nth-child(2) {
+  transform: translateX(-8px);
+}
+
+#menuToggle:hover span:nth-child(1) {
+  transform: translateX(1px);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* Blocks and backdrop */
+.backdrop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(25px);
+  background-clip: content-box;
+  background-origin: content-box;
+}
+
+.blue .backdrop::before {
+  background-color: rgba(45, 46, 131, 0.8);
+}
+
+.white .backdrop::before {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.backdrop > article {
+  position: relative;
+}
+
+header {
+  position: relative;
+}
+
+section {
+  z-index: 80;
+}
+
+.banner {
+  z-index: 200;
+}
+
+.container {
+  z-index: 100;
+}
+
+.block {
+  z-index: 1;
+}
+
+/* Partner banner */
+.banner {
+  background: white;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+}
+
+.banner img {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  margin: 0;
+  padding: 10px;
+  vertical-align: middle;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slick-track,
+.slick-list {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slick-slide {
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Navbar */
+.nav-pills .navbar-brand {
+  background-color: unset !important;
+}
+
+.navbar-brand img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--brown);
+}
+
+.nav-link,
+.nav-link a {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: var(--brown);
+}
+
+#sidebar.offcanvas {
+  width: 300px;
+}
+
+#profile.offcanvas {
+  min-width: 50vw;
+}
+
+/* FORMS */
+.form-control {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-primary {
+  background-color: var(--brown);
+  border-color: var(--brown);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:focus-visible,
+.btn-primary:focus-within {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+/* CARDS */
+.card {
+  border-radius: 0;
+}
+
+.card > img {
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.timetable .card-group > * {
+  opacity: 30%;
+}
+
+.timetable .card-group {
+  background-color: white;
+}
+
+.timetable .card-group .card:hover,
+.timetable .card-group .card:active,
+.timetable .card-group .card:focus,
+.timetable .card-group .chosen {
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+  opacity: 100%;
+}
+
+.timetable .card-group .card-empty {
+  border: 0 !important;
+  opacity: 0 !important;
+}
+
+.timetable .card .card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.timetable .card-footer-transparent {
+  background: transparent;
+  border: 0;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-img {
+  width: 25%;
+  margin-left: 2rem;
+}
+
+.timetable.offcanvas {
+  width: fit-content;
+  width: -moz-fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 575.98px) {
+  .modal-img {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    margin: 0 0.5rem;
+  }
+}
+/* BlOCK */
+.block {
+  background-color: rgba(var(--blue-rgb), 0.8);
+}
+
+.block-white {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.glitch1 {
+  background-image: url("/img/glitch1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.glitch2 {
+  background-image: url("/img/glitch2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.glitch3 {
+  background-image: url("/img/glitch3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.glitch4 {
+  background-image: url("/img/glitch4.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#location {
+  background-image: url("/img/location/orpheus-entree.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#corona-speaker {
+  background-image: url("/img/location/spreker.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#partners .card-img-top {
+  object-fit: contain;
+}
+
+#partners .card {
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+#partners .card:hover {
+  background-color: rgba(var(--blue-rgb), 0.4);
+}
+
+#partners .card-footer {
+  background: transparent;
+  border: 0;
+}
+
+#partners .card-no-pointer {
+  cursor: default !important;
+}
+
+section,
+.container,
+main,
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container {
+  overflow: visible;
+}
+
+/* ALERTS */
+.toast {
+  border-radius: 0;
+}
